@@ -1,0 +1,163 @@
+$primary-blue: #396aab;
+$primary-blue-dark: #2b5284;
+$primary-blue-90: rgba(57, 106, 171, 0.9);
+$desktop-size: '1088px';
+$tablet-size: '768px';
+
+//Template overrides
+
+a {
+    color: $primary-blue;
+}
+
+// Forms
+.control-material.is-primary input.material-input:focus ~ label, .control-material.is-primary input:valid ~ label, .control-material.is-primary textarea:focus ~ label {
+    color: $primary-blue;
+}
+
+.control-material.is-primary .bar:before, .control-material.is-primary .bar:after {
+    background: $primary-blue;
+}
+
+// Navbar
+.navbar {
+    @media screen and (max-width: $desktop-size) {
+        > .container {
+            align-items: center;
+            display: flex;
+        }
+    }
+}
+.navbar-brand {
+    @media screen and (max-width: $desktop-size) {
+        display: inline;
+        flex: 1 auto;
+        min-height: 0;
+    }
+}
+.navbar-menu {
+    display: flex;
+
+    @media screen and (max-width: $tablet-size) {
+        display: inline;
+    }
+
+    @media screen and (max-width: $desktop-size) {
+        align-items: center;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0.5rem 0;
+    }
+
+    .navbar-start {
+        align-items: stretch;
+        display: flex;
+        @media screen and (max-width: $tablet-size) {
+            display: none !important;
+        }
+    }
+}
+
+// Hero
+.hero {
+    background: url('~assets/images/mountains.svg');
+    background-position: 50% 50% !important;
+
+    .columns {
+        justify-content: center;
+    }
+}
+
+.hero-body {
+    padding: 6rem 1.5rem;
+}
+
+#process {
+    .column {
+        padding: 2rem;
+    }
+}
+
+// Feature cards
+.feature-card {
+    &.hover-inset {
+        &:hover {
+            cursor: default;
+        }
+    }
+}
+
+//Team cards
+.modern-team {
+    .modern-team-item {
+        .item-img {
+            border-radius: 10px;
+            height: 430px;
+            &:before {
+                background-color: $primary-blue-90;
+            }
+            img {
+                filter: grayscale(60%);
+            }
+        }
+        .member-info {
+            .member-name {
+                font-weight: 600;
+            }
+            .member-position {
+                color: $primary-blue;
+            }
+        }
+
+    }
+}
+
+// Components
+.button {
+    &.primary-btn {
+        &.btn-outlined {
+            border-color: $primary-blue;
+            color: $primary-blue;
+            &:hover {
+                background-color: $primary-blue;
+            }
+        }
+        &.raised {
+            &:hover {
+                box-shadow: 0 14px 26px -12px rgba(57, 106, 171, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(57, 106, 171, 0.2) !important;
+            }
+        }
+    }
+}
+
+// Services cards
+.services-cards {
+    &.is-minimal {
+        .feature-card {
+            &:hover {
+                i {color: $primary-blue;}
+            }
+        }
+    }
+}
+
+.section {
+    .title-divider {
+        background: $primary-blue;
+    }
+}
+
+.process-block {
+    .process-number {
+        background: $primary-blue;
+    }
+}
+
+// Footer
+
+footer {
+    color: #A9ABAC;
+    &.footer-dark {
+        background: $primary-blue-dark;
+    }
+}

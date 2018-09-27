@@ -1,0 +1,305 @@
+<template>
+  <div>
+    <!-- Hero (Parallax) and nav -->
+    <HeroNavbar/>
+
+    <!-- /Hero and nav -->
+      <!-- Services section -->
+    <section class="section section-feature-grey is-medium">
+        <div class="container">
+            <div class="columns services-cards is-minimal is-vcentered is-gapless is-multiline">
+                <!-- Card -->
+                <div class="column">
+                    <div class="feature-card card-md hover-inset has-text-centered">
+                        <div class="card-icon">
+                            <i class="im im-icon-Two-Windows"></i>
+                        </div>
+                        <div class="card-title">
+                            <h4>Front-end development</h4>
+                        </div>
+                        <div class="card-feature-description">
+                            <span class="">We like all things JavaScript, and we've got experience with most frameworks.</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="column">
+                    <div class="feature-card card-md hover-inset has-text-centered">
+                        <div class="card-icon">
+                            <i class="im im-icon-Smartphone-4"></i>
+                        </div>
+                        <div class="card-title">
+                            <h4>Mobile Applications</h4>
+                        </div>
+                        <div class="card-feature-description">
+                            <span class="">We're about building mobile applications in Flutter or React Native.</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="column">
+                    <div class="feature-card card-md hover-inset has-text-centered">
+                        <div class="card-icon">
+                            <i class="im im-icon-Business-ManWoman"></i>
+                        </div>
+                        <div class="card-title">
+                            <h4>Staffing</h4>
+                        </div>
+                        <div class="card-feature-description">
+                            <span class="">We supply well qualified front-end contract engineers for your company</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="has-text-centered mt-40 mb-40 is-title-reveal">
+                <a class="button button-cta is-bold btn-align primary-btn btn-outlined rounded">Learn more</a>
+            </div> -->
+        </div>
+    </section>
+    <!-- /Services section -->
+
+    <!-- Team section -->
+    <section id="team" class="section is-medium huge-pb">
+        <div class="container">
+            <!-- Title -->
+            <div class="centered-title">
+                <h2>{{agency.team.title}}</h2>
+                <div class="title-divider"></div>
+                <div class="subheading">
+                    {{agency.team.subtext}}
+                </div>
+            </div>
+            <!-- Title -->
+
+            <div class="content-wrapper">
+                <div class="modern-team">
+                    <!-- Team member -->
+                    <article v-for="member in agency.team.members" :key="member.id" class="modern-team-item circle-mask zoom-effect">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                <img :src="member.avatar" class="member-avatar" alt="">
+                            </div>
+                            <div class="overlay-wrapper">
+                                <div>
+                                    <a class="social" :href="member.linkedin" target="_blank">
+                                        <i class="social-icon fa fa-linkedin"></i>
+                                    </a>
+                                    <a class="social" :href="member.github" target="_blank">
+                                        <i class="social-icon fa fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">{{member.name}}</h3>
+                            <span class="member-position">{{member.title}}</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Team section -->
+
+    <!-- Process section -->
+    <section id="process" class="section section-feature-grey is-medium huge-pb">
+        <div class="container">
+            <!-- Title -->
+            <div class="centered-title">
+                <h2>Our Process</h2>
+                <div class="title-divider"></div>
+                <div class="subheading">
+                    Before development, there's thinking. Our process is sharp and let us craft the best quality.
+                </div>
+            </div>
+            <!-- /Title -->
+
+            <!-- Process steps -->
+            <div class="content-wrapper">
+                <div class="columns is-vcentered">
+                    <!-- Process step -->
+                    <div class="column is-4">
+                        <div class="process-block">
+                            <div class="process-icon is-icon-reveal">
+                                <div class="icon-wrapper">
+                                    <i class="im im-icon-File-Edit"></i>
+                                    <div class="process-number">1</div>
+                                </div>
+                            </div>
+                            <div class="process-info">
+                                <div class="details">
+                                    <div class="motto">Design</div>
+                                    <p class="description">We begin our development architecture with a formal design documentation phase.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Process step -->
+                    <div class="column is-4">
+                        <div class="process-block">
+                            <div class="process-icon is-icon-reveal">
+                                <div class="icon-wrapper">
+                                    <i class="im im-icon-Code-Window"></i>
+                                    <div class="process-number">2</div>
+                                </div>
+                            </div>
+                            <div class="process-info">
+                                <div class="details">
+                                    <div class="motto">Develop</div>
+                                    <p class="description">We develop with best in class tools, and we develop with these things in mind: scalability, readability, and maintainability.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Process step -->
+                    <div class="column is-4">
+                        <div class="process-block">
+                            <div class="process-icon is-icon-reveal">
+                                <div class="icon-wrapper">
+                                    <i class="im im-icon-Arrow-Refresh"></i>
+                                    <div class="process-number">3</div>
+                                </div>
+                            </div>
+                            <div class="process-info">
+                                <div class="details">
+                                    <div class="motto">Iterate</div>
+                                    <p class="description">You know, the back and forth between the client and us to achieve a desireable end.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Process steps -->
+        </div>
+    </section>
+    <!-- /Process section -->
+
+    <!-- Clients grid -->
+    <div id="clients" class="section is-medium huge-pb">
+        <div class="container">
+            <!-- Title -->
+            <div class="centered-title">
+                <h2>They Trust us</h2>
+                <div class="title-divider"></div>
+                <div class="subheading">
+                    Discover the meaning of code quality and hire our team. Let's work together.
+                </div>
+            </div>
+            <!-- /Title -->
+
+            <div class="content-wrapper">
+                <div class="grid-clients four-grid">
+                    <div class="columns is-vcentered">
+                        <div class="column is-hidden-mobile"></div>
+                        <!-- Client -->
+                        <div class="column">
+                            <a><img class="client" src="/images/logos/custom/google.svg" alt=""></a>
+                        </div>
+                        <!-- Client -->
+                        <div class="column">
+                            <a><img class="client" src="/images/logos/custom/apple.svg" alt=""></a>
+                        </div>
+                        <!-- Client -->
+                        <div class="column">
+                            <a><img class="client" src="/images/logos/custom/cisco.svg" alt=""></a>
+                        </div>
+                        <!-- Client -->
+                        <div class="column">
+                            <a><img class="client" src="/images/logos/custom/pge.svg" alt=""></a>
+                        </div>
+                        <div class="column is-hidden-mobile"></div>
+                    </div>
+                    <div class="columns is-vcentered is-separator">
+                        <div class="column is-hidden-mobile"></div>
+                        <!-- Client -->
+                        <div class="column">
+                            <a><img class="client" src="/images/logos/custom/schwab.svg" alt=""></a>
+                        </div>
+                        <!-- Client -->
+                        <div class="column">
+                            <a><img class="client" src="/images/logos/custom/ibm.svg" alt=""></a>
+                        </div>
+                        <!-- Client -->
+                        <div class="column">
+                            <a><img class="client" src="/images/logos/custom/servicenow.svg" alt=""></a>
+                        </div>
+                        <!-- Client -->
+                        <div class="column">
+                            <a><img class="client" src="/images/logos/custom/fisher.png" alt=""></a>
+                        </div>
+                        <div class="column is-hidden-mobile"></div>
+                    </div>
+                </div>
+
+                <!-- <div class="pt-60 pb-60 has-text-centered">
+                    <a class="button button-cta is-bold btn-align primary-btn btn-outlined rounded is-title-reveal">Start a project</a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Contact -->
+    <Contact/>
+    <!-- /Clients grid -->
+    <DarkFooter/>
+  </div>
+</template>
+
+<script>
+import AppLogo from '~/components/AppLogo.vue'
+import Contact from '~/components/Contact.vue'
+import DarkFooter from '~/components/footer/DarkFooter.vue'
+import HeroNavbar from '~/components/nav/HeroNavbar.vue'
+
+const data = {
+    team: {
+        title: "Team Leads",
+        subtext: "We're dedicated engineers with Fortune 500 Silicon Valley corporate experience and agency backgrounds.",
+        members: [
+            {
+                name: "David Davis",
+                title: "Founder and Lead Developer",
+                img: "",
+                id: 1,
+                linkedin: "https://www.linkedin.com/in/davidjamesdavis/",
+                github: "https://github.com/david-j-davis",
+                avatar: "/images/ddavis_headshot.jpg"
+            },
+            {
+                name: "Justin Sorensen",
+                title: "Co-Founder and Lead Developer",
+                img: "",
+                id: 2,
+                linkedin: "https://www.linkedin.com/in/sorensenjg/",
+                github: "https://github.com/sorensenjg",
+                avatar: "/images/jsorensen_headshot.jpg"
+            }
+        ]
+    }
+}
+
+export default {
+    data() {
+        return {
+            agency: data
+        }
+    },
+    components: {
+        AppLogo,
+        Contact,
+        DarkFooter,
+        HeroNavbar,
+    },
+    mounted() {
+        // mount parallax functionality
+        const parentDiv = this.$el.querySelectorAll('.parallax')
+        const div = document.createElement('div')
+        div.classList.add('parallax-overlay')
+
+        for (let element of parentDiv) {
+        element.prepend(div)
+        }
+
+    }
+}
+</script>
