@@ -92,7 +92,7 @@ module.exports = {
             ]
         }],
         ['nuxt-google-maps-module', {
-            key: 'AIzaSyDApOeUhtvUzSTNYKO1Y_Ntci-zkL7sHHI', // Google maps key
+            key: 'AIzaSyCoWg3GUfqHFnEfMXZ97H9gfEE_KLuqayU', // Google maps key
         }],
         '@nuxtjs/axios'
     ]
