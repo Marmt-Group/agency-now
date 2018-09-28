@@ -45,7 +45,7 @@ app.post('/', function (req, res) {
     }
 
     const emailData = {
-        'FromEmail': 'davidjamesdavis.djd@gmail.com',
+        'FromEmail': 'admin@marmt.io',
         'FromName': req.body.name,
         'Subject': 'New Marmot Inquiry from ' + req.body.company,
         'Text-part': req.body.message,
