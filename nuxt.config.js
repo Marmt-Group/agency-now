@@ -18,8 +18,7 @@ module.exports = {
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: 'Marmt is a Front-end engineer ran agency by two experienced silicon valley engineers with agency backgrounds. In addition we staff your company with experienced front-end engineers.' }
-        ],
+            { hid: 'description', name: 'description', content: 'Marmt is a Front-end engineer ran agency by two experienced silicon valley engineers with agency backgrounds. In addition we staff your company with experienced front-end engineers.' }        ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
             { rel: 'manifest', href: '/manifest.webmanifest' }
@@ -82,12 +81,6 @@ module.exports = {
         }
     },
     modules: [
-        ['@nuxtjs/browserconfig', { 
-            browserconfig: {
-                TileColor: '#396aab',
-                square150x150logo: { '@': { src: '/mstile-150x150.png' } }
-            }
-        }],
         ['@nuxtjs/google-analytics', {
             id: 'UA-126450118-1',
             disabled: () => document.cookie.indexOf('ga_optout=true') !== -1,
