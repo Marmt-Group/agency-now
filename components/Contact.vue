@@ -79,6 +79,8 @@
 </template>
 
 <script>
+let contactApiBaseUrl = ''
+process.env.NODE_ENV === 'development' ? contactApiBaseUrl = 'http://localhost:3000/' : 'https://marmt.io/'
 
 export default {
 
@@ -315,7 +317,7 @@ export default {
 
         async sendMail(event) {
             this.isLoading = true;
-            await this.$axios.$post('/api/contact', {
+            await this.$axios.$post(contactApiBaseUrl + 'api/contact', {
                 name: this.name,
                 email: this.email,
                 company: this.company,
