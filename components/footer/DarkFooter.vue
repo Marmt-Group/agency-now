@@ -50,7 +50,7 @@
             <div class="column">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="/images/logos/marmt-logo-grey.svg" alt="">
+                        <img src="/images/logos/marmt-logo-grey.svg" alt="Marmt logo grey version">
                     </div>
                     <!-- <div class="footer-header">
                         <nav class="level is-mobile">

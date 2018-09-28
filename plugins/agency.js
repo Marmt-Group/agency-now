@@ -12,40 +12,44 @@ import ScrollReveal from 'scrollreveal'
 window.sr = ScrollReveal();
 
 // Simple reveal
-sr.reveal('.is-title-reveal', {
-    origin: 'bottom',
-    distance: '20px',
-    duration: 600,
-    delay: 100,
-    rotate: { x: 0, y: 0, z: 0 },
-    opacity: 0,
-    scale: 1,
-    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
-    container: window.document.documentElement,
-    mobile: true,
-    reset: false,
-    useDelay: 'always',
-    viewFactor: 0.2,
+if ($('.is-title-reveal').length) {
+    sr.reveal('.is-title-reveal', {
+        origin: 'bottom',
+        distance: '20px',
+        duration: 600,
+        delay: 100,
+        rotate: { x: 0, y: 0, z: 0 },
+        opacity: 0,
+        scale: 1,
+        easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+        container: window.document.documentElement,
+        mobile: true,
+        reset: false,
+        useDelay: 'always',
+        viewFactor: 0.2,
 
-});
+    }, 100);
+}
 
 // Revealing multiple icons
-sr.reveal('.is-icon-reveal', {
-    origin: 'bottom',
-    distance: '20px',
-    duration: 600,
-    delay: 100,
-    rotate: { x: 0, y: 0, z: 0 },
-    opacity: 0,
-    scale: 1,
-    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
-    container: window.document.documentElement,
-    mobile: true,
-    reset: true,
-    useDelay: 'always',
-    viewFactor: 0.2,
+if ($('.is-icon-reveal').length) {
+    sr.reveal('.is-icon-reveal', {
+        origin: 'bottom',
+        distance: '20px',
+        duration: 600,
+        delay: 100,
+        rotate: { x: 0, y: 0, z: 0 },
+        opacity: 0,
+        scale: 1,
+        easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+        container: window.document.documentElement,
+        mobile: true,
+        reset: true,
+        useDelay: 'always',
+        viewFactor: 0.2,
 
-}, 100);
+    }, 100);
+}
 
 //Toggle the sign up button color when solid navbar comes in
 if ($('.navbar-light').length) {

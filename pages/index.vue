@@ -77,7 +77,7 @@
                     <article v-for="member in agency.team.members" :key="member.id" class="modern-team-item circle-mask zoom-effect">
                         <div class="item-wrapper">
                             <div class="item-img">
-                                <img :src="member.avatar" class="member-avatar" alt="">
+                                <img :src="member.avatar" class="member-avatar" alt="member avatar">
                             </div>
                             <div class="overlay-wrapper">
                                 <div>
@@ -194,19 +194,19 @@
                         <div class="column is-hidden-mobile"></div>
                         <!-- Client -->
                         <div class="column">
-                            <a><img class="client" src="/images/logos/custom/google.svg" alt=""></a>
+                            <a><img class="client" src="/images/logos/custom/google.svg" alt="Google logo"></a>
                         </div>
                         <!-- Client -->
                         <div class="column">
-                            <a><img class="client" src="/images/logos/custom/apple.svg" alt=""></a>
+                            <a><img class="client" src="/images/logos/custom/apple.svg" alt="Apple logo"></a>
                         </div>
                         <!-- Client -->
                         <div class="column">
-                            <a><img class="client" src="/images/logos/custom/cisco.svg" alt=""></a>
+                            <a><img class="client" src="/images/logos/custom/cisco.svg" alt="Cisco logo"></a>
                         </div>
                         <!-- Client -->
                         <div class="column">
-                            <a><img class="client" src="/images/logos/custom/pge.svg" alt=""></a>
+                            <a><img class="client" src="/images/logos/custom/pge.svg" alt="PGE logo"></a>
                         </div>
                         <div class="column is-hidden-mobile"></div>
                     </div>
@@ -214,19 +214,19 @@
                         <div class="column is-hidden-mobile"></div>
                         <!-- Client -->
                         <div class="column">
-                            <a><img class="client" src="/images/logos/custom/schwab.svg" alt=""></a>
+                            <a><img class="client" src="/images/logos/custom/schwab.svg" alt="Charles Schwab logo"></a>
                         </div>
                         <!-- Client -->
                         <div class="column">
-                            <a><img class="client" src="/images/logos/custom/ibm.svg" alt=""></a>
+                            <a><img class="client" src="/images/logos/custom/ibm.svg" alt="IBM logo"></a>
                         </div>
                         <!-- Client -->
                         <div class="column">
-                            <a><img class="client" src="/images/logos/custom/servicenow.svg" alt=""></a>
+                            <a><img class="client" src="/images/logos/custom/servicenow.svg" alt="Servicenow logo"></a>
                         </div>
                         <!-- Client -->
                         <div class="column">
-                            <a><img class="client" src="/images/logos/custom/fisher.png" alt=""></a>
+                            <a><img class="client" src="/images/logos/custom/fisher.png" alt="Fisher Investments logo"></a>
                         </div>
                         <div class="column is-hidden-mobile"></div>
                     </div>
@@ -259,7 +259,6 @@ const data = {
             {
                 name: "David Davis",
                 title: "Co-Founder and Lead Developer",
-                img: "",
                 id: 1,
                 linkedin: "https://www.linkedin.com/in/davidjamesdavis/",
                 github: "https://github.com/david-j-davis",
@@ -268,7 +267,6 @@ const data = {
             {
                 name: "Justin Sorensen",
                 title: "Co-Founder and Lead Developer",
-                img: "",
                 id: 2,
                 linkedin: "https://www.linkedin.com/in/sorensenjg/",
                 github: "https://github.com/sorensenjg",

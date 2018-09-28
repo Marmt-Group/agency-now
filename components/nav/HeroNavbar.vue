@@ -5,8 +5,8 @@
             <!-- Brand -->
             <div class="navbar-brand">
                 <a class="navbar-item" href="/">
-                    <img class="light-logo" src="/images/logos/marmt-logo-light.svg" alt="">
-                    <img class="dark-logo" src="/images/logos/marmt-logo.svg" alt="">
+                    <img class="light-logo" src="/images/logos/marmt-logo-light.svg" alt="Marmt logo light version">
+                    <img class="dark-logo" src="/images/logos/marmt-logo.svg" alt="Marmt logo">
                 </a>
 
                 <!-- Sidebar Trigger -->

@@ -47,7 +47,7 @@ app.post('/', function (req, res) {
     const emailData = {
         'FromEmail': 'davidjamesdavis.djd@gmail.com',
         'FromName': req.body.name,
-        'Subject': 'New Marmot Design Inquiry from ' + req.body.company,
+        'Subject': 'New Marmot Inquiry from ' + req.body.company,
         'Text-part': req.body.message,
         'Html-part': '<p>' + req.body.message + '</p>',
         'Recipients': [{ 'Email': 'davidjamesdavis.djd@gmail.com', 'Name': 'David' }, { 'Email': 'sorensenjg@gmail.com', 'Name': 'Justin' }],

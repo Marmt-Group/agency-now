@@ -15,40 +15,40 @@
                                         <div class="column is-4">
                                             <!-- Form field -->
                                             <div class="control-material is-primary">      
-                                                <input class="material-input" name="name" type="text" required="" v-model="name">
+                                                <input id="name" class="material-input" name="name" type="text" required="" v-model="name">
                                                 <span class="material-highlight"></span>
                                                 <span class="bar"></span>
-                                                <label>Name *</label>
+                                                <label for="name">Name *</label>
                                             </div>
                                             <!-- /Form field -->
                                         </div>
                                         <div class="column is-4">
                                             <!-- /Form field -->
                                             <div class="control-material is-primary">      
-                                                <input class="material-input" name="email" type="email" required="" v-model="email">
+                                                <input id="email" class="material-input" name="email" type="email" required="" v-model="email">
                                                 <span class="material-highlight"></span>
                                                 <span class="bar"></span>
-                                                <label>Email *</label>
+                                                <label for="email">Email *</label>
                                             </div>
                                             <!-- /Form field -->
                                         </div>
                                         <div class="column is-4">
                                             <!-- Form field -->
                                             <div class="control-material is-primary">      
-                                                <input class="material-input" name="company" type="text" required="" v-model="company">
+                                                <input id="company" class="material-input" name="company" type="text" required="" v-model="company">
                                                 <span class="material-highlight"></span>
                                                 <span class="bar"></span>
-                                                <label>Company</label>
+                                                <label for="company">Company</label>
                                             </div>
                                             <!-- /Form field -->
                                         </div>
                                     </div>
                                     <!-- Form field -->
                                     <div class="control-material is-primary">  
-                                        <textarea rows="2" name="message" required="" v-model="message"></textarea>
+                                        <textarea id="message" rows="2" name="message" required="" v-model="message"></textarea>
                                         <span class="material-highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Message *</label>
+                                        <label for="message">Message *</label>
                                     </div>
                                     <!-- /Form field -->
                                     <div class="mb-20">
