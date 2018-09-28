@@ -1,1 +1,3 @@
-api/contact.js linguist-language=JavaScript
+assets/* linguist-vendored
+static/* linguist-vendored
+nuxt.config.js linguist-language=JavaScript
