@@ -258,7 +258,7 @@ const data = {
         members: [
             {
                 name: "David Davis",
-                title: "Founder and Lead Developer",
+                title: "Co-Founder and Lead Developer",
                 img: "",
                 id: 1,
                 linkedin: "https://www.linkedin.com/in/davidjamesdavis/",
