@@ -178,6 +178,21 @@ a {
     }
 }
 
+.is-block-info {
+    padding: 2.5rem;
+    background: #ededed;
+    ul {
+        color: #396aab;
+        margin: 1.5rem 0;
+        line-height: inherit;
+        list-style-position: inside;
+        list-style-type: square;
+        li {
+            line-height: 2;
+        }
+    }
+}
+
 // Footer
 
 footer {

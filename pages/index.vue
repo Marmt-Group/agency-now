@@ -46,7 +46,7 @@
                             <h4>Staffing</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We supply well qualified front-end contract engineers for your company. Ask us for more details.</span>
+                            <span class="">We supply well qualified front-end contract engineers for your company. Ask us for more details. <a href="#work-with-us" @click="workWithUs">Interested in developing with us?</a></span>
                         </div>
                     </div>
                 </div>
@@ -57,6 +57,50 @@
         </div>
     </section>
     <!-- /Services section -->
+
+    <!-- Work with us section -->
+    <section id="work-with-us" class="section section-feature-grey" v-if="openWorkSection">
+        <div class="container">
+            <div class="centered-title">
+                <h2>Work With Us</h2>
+                <div class="title-divider"></div>
+                <div class="subheading">
+                    We work for some of the largest companies in the world
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="columns">
+                    <!-- Content -->
+                    <div class="column is-6">
+                        <div class="service-box">
+                            <h2 class="service-title">A little more about us</h2>
+                            <div class="title-divider"></div>
+                            <p class="description">We started Marmt because we're really passionate, really hungry developers who think we can do things a little better than the competition. We've worked with agencies who go stagnant, and worked with headhunters who have no idea what they're talking about.</p>
+                            <p class="description">We think we can do a better job then the competition because we're developers working with and for developers.</p>
+                            <p class="description">If you want to get your foot in the door with great companies then we'll do what we can to get you there<sup>*</sup>.</p>
+                            <p class="help"><sup>*</sup>At this time we can only employ U.S. citizens in the San Francisco bay area.</p>
+                        </div>
+                    </div>
+                    <!-- Icons -->
+                    <div class="column is-5 is-offset-1 is-block-info">
+                        <p><strong>Are you ready to work for us? If so, reach out with the following:</strong></p>
+                        <ul>
+                            <li>Your top 3 skills</li>
+                            <li>Your website &amp; Github if you have one</li>
+                            <li>Where you see yourself in two years</li>
+                            <li>Anything else you'd like to tell us</li>
+                        </ul>
+                        <div class="action">
+                            <a class="button btn-align button-cta btn-outlined raised rounded primary-btn is-bold" href="mailto:admin@marmt.io?subject=I'd%20like%20to%20work%20with%20you" target="_top">Get in Touch</a>
+                        </div>
+                    </div>
+                    <!-- /Icons -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Work with us section -->
 
     <!-- Team section -->
     <section id="team" class="section is-medium huge-pb">
@@ -180,7 +224,7 @@
         <div class="container">
             <!-- Title -->
             <div class="centered-title">
-                <h2>They Trust us</h2>
+                <h2>They Trust Us</h2>
                 <div class="title-divider"></div>
                 <div class="subheading">
                     Discover the meaning of code quality and hire our team. Let's work together.
@@ -279,7 +323,8 @@ const data = {
 export default {
     data() {
         return {
-            agency: data
+            agency: data,
+            openWorkSection: false
         }
     },
     components: {
@@ -298,6 +343,19 @@ export default {
         element.prepend(div)
         }
 
+    },
+    methods: {
+        workWithUs(event) {
+            const target = event.target.hash
+            this.openWorkSection = true
+            setTimeout(() => {
+                this.$el.querySelector(target).scrollIntoView({
+                    behavior: "smooth", 
+                    block: "start", 
+                    inline: "nearest"
+                });
+            }, 200)
+        }
     }
 }
 </script>
