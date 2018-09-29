@@ -8,7 +8,7 @@
                 <div class="contact-form-wrapper">
                     <div>
                         <h2 class="form-title has-text-centered">Say Hello !</h2>
-                        <form class="pl-20 pr-20" @submit.prevent="sendMail" @keyup.enter="sendMail">
+                        <form id="contact-form" class="pl-20 pr-20" @submit.prevent="sendMail" @keyup.enter="sendMail">
                             <div class="columns">
                                 <div class="column is-8 is-offset-2">
                                     <div class="columns is-vcentered">
@@ -45,15 +45,16 @@
                                     </div>
                                     <!-- Form field -->
                                     <div class="control-material is-primary">  
-                                        <textarea id="message" rows="2" name="message" required="" v-model="message"></textarea>
+                                        <textarea id="message" rows="2" name="message" required="" v-model="message" @focus="textShowHelp = true" @blur="textShowHelp = false"></textarea>
                                         <span class="material-highlight"></span>
                                         <span class="bar"></span>
+                                        <span class="help" v-show="textShowHelp">Message needs to be at least 25 characters.</span>
                                         <label for="message">Message *</label>
                                     </div>
                                     <!-- /Form field -->
                                     <div class="mb-20">
                                         <!-- Form submit -->
-                                        <button type="submit" id="submit" class="button button-cta btn-align primary-btn btn-outlined is-bold is-fullwidth rounded no-lh" v-bind:class="{ 'is-loading': isLoading, 'is-danger': isDanger }">Send message</button> 
+                                        <button type="submit" id="submit" class="button button-cta btn-align primary-btn btn-outlined is-bold is-fullwidth rounded no-lh">Send message</button> 
                                         <!-- /Form submit -->
                                     </div>
                                     <div class="mb-20" v-if="isDanger">
@@ -88,7 +89,8 @@ export default {
             company: '',
             message: '',
             isLoading: false,
-            isDanger: false
+            isDanger: false,
+            textShowHelp: false
         }
     },
     mounted() {
@@ -304,8 +306,10 @@ export default {
             this.message = ''
         },
 
-        handleError(err) {
-            throw new Error(err.ErrorMessage);
+        messageNotSubmitted() {
+            const submit = this.$el.querySelector('#submit')
+            submit.classList.remove('primary-btn', 'btn-outlined')
+            submit.classList.add('is-danger')
         },
 
         messageSent() {
@@ -321,15 +325,15 @@ export default {
                 message: this.message
             })
             .then((response) => {
+                console.log(response)
                 this.isLoading = false
                 this.messageSent()
-                console.log(response)
-                //TODO: need to show success message on the client
             })
             .catch((error) => {
+                console.log(error)
                 this.isLoading = false
                 this.isDanger = true
-                console.log(error)
+                this.messageNotSubmitted()
             })
             this.clearForm();
         }
