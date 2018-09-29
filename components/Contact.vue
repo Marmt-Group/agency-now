@@ -58,7 +58,7 @@
                                         <!-- /Form submit -->
                                     </div>
                                     <div class="mb-20" v-if="isDanger">
-                                        <div class="submit-error is-size-7 has-text-danger">We're sorry it didn't go through. Please try again later, or email David at: <a href="mailto:davidjamesdavis.djd@gmail.com" target="_top">davidjamesdavis.djd@gmail.com</a></div>
+                                        <div class="submit-error is-size-7 has-text-danger">We're sorry it didn't go through. Please try again later, or email the team at: <a href="mailto:admin@marmt.io" target="_top">admin@marmt.io</a></div>
                                     </div>
                                 </div>
                             </div>
