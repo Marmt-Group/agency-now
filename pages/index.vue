@@ -15,10 +15,10 @@
                             <i class="im im-icon-Two-Windows"></i>
                         </div>
                         <div class="card-title">
-                            <h4>Front-end development</h4>
+                            <h4>Front-end development(mostly)</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We like all things JavaScript, and we've got experience with most frameworks.</span>
+                            <span class="">We like all things JavaScript—that includes node.js, and we've got experience with most frameworks.</span>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                             <h4>Mobile Applications</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We're about building mobile applications in Flutter or React Native.</span>
+                            <span class="">We're about building native mobile applications in Flutter or React Native.</span>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                             <h4>Staffing</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We supply well qualified front-end contract engineers for your company</span>
+                            <span class="">We supply well qualified front-end contract engineers for your company. Ask us for more details.</span>
                         </div>
                     </div>
                 </div>
