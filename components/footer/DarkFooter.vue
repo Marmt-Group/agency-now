@@ -74,7 +74,9 @@
                         </nav>
                     </div> -->
                     <div class="copyright">
-                        <span class="moto"><span>&#169;{{year}}</span> Marmt Group, LLC. All rights reserved.</span>
+                        <p>Marmt Group, LLC.</p>
+                        <p>6937 Village Pkwy #2781</p>
+                        <p>Dublin, CA 94568</p>
                     </div>
                 </div>
             </div>
