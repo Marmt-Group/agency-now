@@ -306,7 +306,7 @@ const data = {
                 id: 1,
                 linkedin: "https://www.linkedin.com/in/davidjamesdavis/",
                 github: "https://github.com/david-j-davis",
-                avatar: "/images/ddavis_headshot.jpg"
+                avatar: "/images/djd_headshot.jpg"
             },
             {
                 name: "Justin Sorensen",
