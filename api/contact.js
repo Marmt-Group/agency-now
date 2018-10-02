@@ -1,9 +1,11 @@
-const express = require('express')
-const validator = require('validator')
-const xssFilters = require('xss-filters')
+import express from 'express'
+import credential from '../credentials'
+import validator from 'validator'
+import xssFilters from 'xss-filters'
+
 const Mailjet = require('node-mailjet').connect(
-    'bb2a800ddd6f9330fbb3350cdd4cf3bf', //public key
-    '5fa1e27bb3703c54a490fa18bfbbb295' //private key
+    credential.mailJet.public, //public key
+    credential.mailJet.private //private key
 );
 
 const app = express()

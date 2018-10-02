@@ -1,5 +1,6 @@
 import autoprefixer from 'autoprefixer'
 import helmet from 'helmet'
+import credential from './credentials'
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -82,7 +83,7 @@ module.exports = {
     },
     modules: [
         ['@nuxtjs/google-analytics', {
-            id: 'UA-126450118-1',
+            id: credential.gAnalytics,
             disabled: () => document.cookie.indexOf('ga_optout=true') !== -1,
             debug: {
                 sendHitTask: isProd
@@ -92,7 +93,7 @@ module.exports = {
             ]
         }],
         ['nuxt-google-maps-module', {
-            key: 'AIzaSyCoWg3GUfqHFnEfMXZ97H9gfEE_KLuqayU', // Google maps key
+            key: credential.gmapKey, // Google maps key
         }],
         '@nuxtjs/axios'
     ]
