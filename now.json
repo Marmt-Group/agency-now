@@ -1,5 +1,21 @@
 {
-    "alias": [
-        "marmt.io"
+    "files": [
+        "api",
+        "assets",
+        "components",
+        "layouts",
+        "middleware",
+        "pages",
+        "plugins",
+        "static",
+        "store",
+        "credentials.js",
+        ".eslintrc.js",
+        ".gitignore",
+        ".gitattributes",
+        "nuxt.config.js",
+        "package-lock.json",
+        "package.json",
+        "README.md"
     ]
 }

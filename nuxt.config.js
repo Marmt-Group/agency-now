@@ -1,6 +1,6 @@
 import autoprefixer from 'autoprefixer'
 import helmet from 'helmet'
-import credential from './credentials'
+import credential from './credentials.js'
 
 const isProd = process.env.NODE_ENV === 'production'
 

@@ -1,5 +1,5 @@
 import express from 'express'
-import credential from '../credentials'
+import credential from '../credentials.js'
 import validator from 'validator'
 import xssFilters from 'xss-filters'
 
