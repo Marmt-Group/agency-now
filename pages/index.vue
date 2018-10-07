@@ -76,7 +76,7 @@
                         <div class="service-box">
                             <h2 class="service-title">A little more about us</h2>
                             <div class="title-divider"></div>
-                            <p class="description">We started Marmt because we're really passionate, really hungry developers who think we can do things a little better than the competition. We've worked with agencies who go stagnant, and worked with headhunters who have no idea what they're talking about.</p>
+                            <p class="description">We started Marmt because we're really passionate, really hungry developers who think we can do things a little better than the competition. We've worked with agencies who go stagnant, and worked with headhunters who have no working concept of dev technology.</p>
                             <p class="description">We think we can do a better job than the competition because we're developers working with and for developers.</p>
                             <p class="description">If you want to get your foot in the door with great companies then we'll do what we can to get you there<sup>*</sup>.</p>
                             <p class="help"><sup>*</sup>At this time we can only employ U.S. citizens in the San Francisco bay area.</p>
@@ -173,7 +173,7 @@
                             <div class="process-info">
                                 <div class="details">
                                     <div class="motto">Design</div>
-                                    <p class="description">We begin our development architecture with a formal design documentation phase.</p>
+                                    <p class="description">We begin our development architecture with a formal engineering design documentation phase.</p>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                             <div class="process-info">
                                 <div class="details">
                                     <div class="motto">Develop</div>
-                                    <p class="description">We develop with best in class tools, and we develop with these things in mind: scalability, readability, and maintainability.</p>
+                                    <p class="description">We develop with best in class tools, and we develop with these things in mind: user experience, scalability, readability, and maintainability.</p>
                                 </div>
                             </div>
                         </div>
