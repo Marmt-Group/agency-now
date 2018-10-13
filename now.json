@@ -1,4 +1,6 @@
 {
+    "name": "marmt",
+    "alias": "marmt.io",
     "files": [
         "api",
         "assets",
