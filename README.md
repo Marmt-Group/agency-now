@@ -11,6 +11,9 @@ $ npm install # Or yarn install
 # serve with hot reload at localhost:3000
 $ npm run dev
 
+# lint the project
+$ npm run precommit
+
 # deploy to Now.sh. Aliasing and scaling handled by the deployment script
 $ npm run deploy
 
