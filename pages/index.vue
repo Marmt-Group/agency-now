@@ -15,10 +15,10 @@
                             <i class="im im-icon-Two-Windows"></i>
                         </div>
                         <div class="card-title">
-                            <h4>Front-end development(mostly)</h4>
+                            <h4>Full-stack development</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We like all things JavaScript—that includes node.js, and we've got experience with most frameworks.</span>
+                            <span class="">We like all things JavaScript from front-end frameworks like React, Vue, and Angular to back-end with expertise in Node.js. PHP, Python, Go, and Java visibility.</span>
                         </div>
                     </div>
                 </div>
@@ -302,7 +302,7 @@ const data = {
         members: [
             {
                 name: "David Davis",
-                title: "Co-Founder and Lead Developer",
+                title: "Co-Founder and Lead Full-Stack Developer",
                 id: 1,
                 linkedin: "https://www.linkedin.com/in/davidjamesdavis/",
                 github: "https://github.com/david-j-davis",
@@ -310,7 +310,7 @@ const data = {
             },
             {
                 name: "Justin Sorensen",
-                title: "Co-Founder and Lead Developer",
+                title: "Co-Founder and Lead Front-End Developer",
                 id: 2,
                 linkedin: "https://www.linkedin.com/in/sorensenjg/",
                 github: "https://github.com/sorensenjg",

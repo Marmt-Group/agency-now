@@ -87,7 +87,7 @@
     const data = {
         hero: {
             title: "We're Marmt",
-            subtext: "Marmt (mar·mot) is a ux/front-end engineer led agency. We also supply in demand high quality front-end developers to your company."
+            subtext: "Marmt (mar·mot) is a full-stack engineer led agency. We also supply in demand high quality developers to your company."
         },
         navItems: [
             {link: 'About', url: '#about', id: 1},
