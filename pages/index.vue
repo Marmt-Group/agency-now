@@ -18,7 +18,7 @@
                             <h4>Full-stack development</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We like all things JavaScript from front-end frameworks like React, Vue, and Angular to back-end with expertise in Node.js. PHP, Python, Go, and Java visibility.</span>
+                            <span class="">We like all things JavaScript from front-end frameworks like React, Vue, and Angular to back-end with expertise in Node.js and experience with Go, Python, and PHP.</span>
                         </div>
                     </div>
                 </div>
@@ -40,13 +40,13 @@
                 <div class="column">
                     <div class="feature-card card-md hover-inset has-text-centered">
                         <div class="card-icon">
-                            <i class="im im-icon-Business-ManWoman"></i>
+                            <i class="im im-icon-Monitor-Analytics"></i>
                         </div>
                         <div class="card-title">
-                            <h4>Staffing</h4>
+                            <h4>Analytics</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We supply well qualified front-end contract engineers for your company. Ask us for more details. <a href="#work-with-us" @click="workWithUs">Interested in developing with us?</a></span>
+                            <span class="">We provide turn-key solutions like site analytics and other "white hat" strategies. Ask us for more details. <!--a href="#work-with-us" @click="workWithUs">Interested in developing with us?</a--></span>
                         </div>
                     </div>
                 </div>

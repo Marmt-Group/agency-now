@@ -95,6 +95,14 @@ module.exports = {
         ['nuxt-google-maps-module', {
             key: credential.gmapKey, // Google maps key
         }],
-        '@nuxtjs/axios'
-    ]
+        '@nuxtjs/axios',
+        '@nuxtjs/sentry'
+    ],
+    sentry: {
+        public_key: credential.sentryKey,
+        project_id: 'marmt-now',
+        config: {
+            // Additional config
+        },
+    }
 }
