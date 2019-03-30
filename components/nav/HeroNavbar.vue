@@ -65,7 +65,7 @@
     <div id="about" class="hero-body">
         <div class="container has-text-centered">
             <div class="columns">
-                <div class="column is-7 has-text-centered is-header-caption">
+                <div class="column is-8 has-text-centered is-header-caption">
                     <h1 class="title main-title subpage-title text-bold is-2">
                         {{nav.hero.title}}
                     </h1>
@@ -87,7 +87,7 @@
     const data = {
         hero: {
             title: "We're Marmt",
-            subtext: "Marmt (mar·mot) is a full-stack engineer led agency. We also supply in demand high quality developers to your company."
+            subtext: "Marmt (mar·mot) is a full-stack engineer led agency. We're a remote geographically dispersed team that provides leading edge enterprise level expertise."
         },
         navItems: [
             {link: 'About', url: '#about', id: 1},

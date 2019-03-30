@@ -74,9 +74,7 @@
                         </nav>
                     </div> -->
                     <div class="copyright">
-                        <p>Marmt Group, LLC.</p>
-                        <p>6937 Village Pkwy #2781</p>
-                        <p>Dublin, CA 94568</p>
+                        <p>&copy;{{this.year}} Marmt Group, LLC.</p>
                     </div>
                 </div>
             </div>
