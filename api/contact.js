@@ -1,11 +1,10 @@
 import express from 'express'
-import credential from '../credentials.js'
 import validator from 'validator'
 import xssFilters from 'xss-filters'
 
 const Mailjet = require('node-mailjet').connect(
-    credential.mailJet.public, //public key
-    credential.mailJet.private //private key
+    process.env.MAILJET_PUBLIC, //public key
+    process.env.MAILJET_PRIVATE //private key
 );
 
 const app = express()

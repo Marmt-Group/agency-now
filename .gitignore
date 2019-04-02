@@ -9,5 +9,3 @@ dist
 # Misc
 .vscode
 *.DS_Store
-#credentials
-credentials.js
