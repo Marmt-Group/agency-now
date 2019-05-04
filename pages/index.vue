@@ -5,8 +5,14 @@
 
     <!-- /Hero and nav -->
       <!-- Services section -->
-    <section class="section section-feature-grey is-medium">
+    <section id="solutions" class="section is-medium">
         <div class="container">
+            <!-- Title -->
+            <div class="centered-title">
+                <h2>Our Solutions</h2>
+                <div class="title-divider"></div>
+            </div>
+            <!-- /Title -->
             <div class="columns services-cards is-minimal is-vcentered is-gapless is-multiline">
                 <!-- Card -->
                 <div class="column">
@@ -18,7 +24,7 @@
                             <h4>Full-stack development</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We like all things JavaScript from front-end frameworks like React, Vue, and Angular to back-end with expertise in Node.js and experience with Go, Python, and PHP.</span>
+                            <span class="">We're strive to be tech agnostic utilizing frameworks like React, Vue, and Angular to back-end with expertise in Node.js, Golang and experience with Python and PHP.</span>
                         </div>
                     </div>
                 </div>
@@ -32,7 +38,7 @@
                             <h4>Mobile Applications</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We're about building native mobile applications in Flutter or React Native.</span>
+                            <span class="">We're about building mobile applications in Flutter or React Native.</span>
                         </div>
                     </div>
                 </div>
@@ -102,59 +108,14 @@
     </section>
     <!-- /Work with us section -->
 
-    <!-- Team section -->
-    <section id="team" class="section is-medium huge-pb">
-        <div class="container">
-            <!-- Title -->
-            <div class="centered-title">
-                <h2>{{agency.team.title}}</h2>
-                <div class="title-divider"></div>
-                <div class="subheading">
-                    {{agency.team.subtext}}
-                </div>
-            </div>
-            <!-- Title -->
-
-            <div class="content-wrapper">
-                <div class="modern-team">
-                    <!-- Team member -->
-                    <article v-for="member in agency.team.members" :key="member.id" class="modern-team-item circle-mask zoom-effect">
-                        <div class="item-wrapper">
-                            <div class="item-img">
-                                <img :src="member.avatar" class="member-avatar" alt="member avatar">
-                            </div>
-                            <div class="overlay-wrapper">
-                                <div>
-                                    <a class="social" :href="member.linkedin" target="_blank">
-                                        <i class="social-icon fa fa-linkedin"></i>
-                                    </a>
-                                    <a class="social" :href="member.github" target="_blank">
-                                        <i class="social-icon fa fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h3 class="member-name">{{member.name}}</h3>
-                            <span class="member-position">{{member.title}}</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /Team section -->
-
     <!-- Process section -->
     <section id="process" class="section section-feature-grey is-medium huge-pb">
         <div class="container">
             <!-- Title -->
             <div class="centered-title">
-                <h2>Our Process</h2>
+                <h2>{{agency.process.title}}</h2>
                 <div class="title-divider"></div>
-                <div class="subheading">
-                    Before development, there's thinking. Our process is sharp and let us craft the best quality.
-                </div>
+                <div class="subheading">{{agency.process.subtext}}</div>
             </div>
             <!-- /Title -->
 
@@ -207,7 +168,7 @@
                             <div class="process-info">
                                 <div class="details">
                                     <div class="motto">Iterate</div>
-                                    <p class="description">You know, the back and forth between the client and us to achieve a desireable end.</p>
+                                    <p class="description">You know, the back and forth between the client and us to achieve a desirable end.</p>
                                 </div>
                             </div>
                         </div>
@@ -219,16 +180,52 @@
     </section>
     <!-- /Process section -->
 
-    <!-- Clients grid -->
-    <div id="clients" class="section is-medium huge-pb">
+    <!-- Team section -->
+    <section id="team" class="section is-medium huge-pb">
         <div class="container">
             <!-- Title -->
             <div class="centered-title">
-                <h2>They Trust Us</h2>
+                <h2>{{agency.team.title}}</h2>
                 <div class="title-divider"></div>
-                <div class="subheading">
-                    Discover the meaning of code quality and hire our team. Let's work together.
+            </div>
+            <!-- Title -->
+
+            <div class="content-wrapper">
+                <div class="modern-team single">
+                    <!-- Team member -->
+                    <div v-for="member in agency.team.members" :key="member.id" class="modern-team-item circle-mask zoom-effect">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                <img :src="member.avatar" class="member-avatar" alt="member avatar">
+                            </div>
+                            <div class="overlay-wrapper">
+                                <div>
+                                    <a class="social" :href="member.linkedin" target="_blank">
+                                        <i class="social-icon fa fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="member-info">
+                            <h3 class="member-name">{{member.name}}</h3>
+                            <span class="member-position">{{member.title}}</span>
+                        </div> -->
+                    </div>
+                    <div class="modern-team-bio">{{agency.bio}}</div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Team section -->
+
+    <!-- Clients grid -->
+    <div id="clients" class="section section-feature-grey is-medium huge-pb">
+        <div class="container">
+            <!-- Title -->
+            <div class="centered-title">
+                <h2>{{agency.clients.title}}</h2>
+                <div class="title-divider"></div>
+                <div class="subheading">{{agency.clients.subtext}}</div>
             </div>
             <!-- /Title -->
 
@@ -296,27 +293,27 @@ import DarkFooter from '~/components/footer/DarkFooter.vue'
 import HeroNavbar from '~/components/nav/HeroNavbar.vue'
 
 const data = {
+    process: {
+        title: "Our Process",
+        subtext: "Before development, there's thinking. Our process is sharp and let us craft the best quality."
+    },
     team: {
-        title: "Team Leads",
-        subtext: "We're dedicated engineers with Fortune 500 Silicon Valley corporate experience and agency backgrounds.",
+        title: "Meet the Founder",
+        subtext: "David is a dedicated engineer with Fortune 500 Silicon Valley corporate experience and an agency background.",
         members: [
             {
                 name: "David Davis",
-                title: "Co-Founder and Lead Full-Stack Developer",
+                title: "Founder and Lead Application Developer",
                 id: 1,
                 linkedin: "https://www.linkedin.com/in/davidjamesdavis/",
-                github: "https://github.com/david-j-davis",
                 avatar: "/images/djd_headshot.jpg"
-            },
-            {
-                name: "Justin Sorensen",
-                title: "Co-Founder and Lead Front-End Developer",
-                id: 2,
-                linkedin: "https://www.linkedin.com/in/sorensenjg/",
-                github: "https://github.com/sorensenjg",
-                avatar: "/images/jsorensen_headshot.jpg"
             }
-        ]
+        ],
+    },
+    bio: "David is a dedicated engineer with Fortune 500 corporate experience and an agency background. He started Marmt because he's a really passionate, really hungry developer who think's Marmt can do things a little better than the competition. Far too often digital agencies die because they become technically irrelevant. Marmt is here to bring you quality solutions with software and strive to remain ahead of the curve.",
+    clients: {
+        title: "They Trust Us",
+        subtext: "Discover the meaning of code quality and hire our team. Let's work together."
     }
 }
 

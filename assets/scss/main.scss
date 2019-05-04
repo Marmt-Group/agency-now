@@ -1,6 +1,8 @@
 $primary-blue: #396aab;
 $primary-blue-dark: #2b5284;
 $primary-blue-90: rgba(57, 106, 171, 0.9);
+$primary-font-grey: #A9ABAC;
+$font-family: "Nexa Light", sans-serif;
 $desktop-size: '1088px';
 $tablet-size: '768px';
 
@@ -90,14 +92,15 @@ a {
 //Team cards
 .modern-team {
     .modern-team-item {
+        width: 20%;
         .item-img {
             border-radius: 10px;
-            height: 430px;
+            height: 275px;
             &:before {
                 background-color: $primary-blue-90;
             }
             img {
-                filter: grayscale(60%);
+                filter: grayscale(100%);
             }
         }
         .member-info {
@@ -108,7 +111,23 @@ a {
                 color: $primary-blue;
             }
         }
+    }
+    .modern-team-bio {
+        color: $primary-font-grey;
+        font-family: $font-family;
+        font-size: 1.5rem;
+        font-weight: 600;
+        flex-shrink: 0;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        padding: 1.5rem;
+        text-align: left;
+        width: 80%;
+        
+    }
 
+    &.single {
+        justify-content: flex-start;
     }
 }
 

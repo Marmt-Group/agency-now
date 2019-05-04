@@ -51,7 +51,7 @@ app.post('/', function (req, res) {
         'Subject': 'New Marmot Inquiry from ' + req.body.company,
         'Text-part': req.body.message,
         'Html-part': '<p>' + req.body.message + '</p>',
-        'Recipients': [{ 'Email': 'davidjamesdavis.djd@gmail.com', 'Name': 'David' }, { 'Email': 'sorensenjg@gmail.com', 'Name': 'Justin' }],
+        'Recipients': [{ 'Email': 'davidjamesdavis.djd@gmail.com', 'Name': 'David' }],
         "Headers": { "Reply-To": req.body.email }
     }
 

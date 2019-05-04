@@ -91,9 +91,10 @@
         },
         navItems: [
             {link: 'About', url: '#about', id: 1},
-            {link: "The team", url: '#team', id: 2},
+            {link: "Our solutions", url: '#solutions', id: 2},
             {link: "Our process", url: '#process', id: 3},
-            {link: "Clients", url: '#clients', id: 4}
+            {link: "Meet the founder", url: '#team', id: 4},
+            {link: "Clients", url: '#clients', id: 5}
         ]
     }
 

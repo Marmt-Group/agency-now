@@ -14,11 +14,11 @@ module.exports = {
     ** Headers of the page
     */
     head: {
-        title: 'Marmt | A Front-end engineer ran agency and staffing partner.',
+        title: 'Marmt | A Full stack engineer ran agency.',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: 'Marmt is a Front-end engineer ran agency by two experienced silicon valley engineers with agency backgrounds. In addition we staff your company with experienced front-end engineers.' }        ],
+            { hid: 'description', name: 'description', content: 'Marmt is a full stack engineer ran agency by two experienced silicon valley engineers with agency backgrounds.' }        ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
             { rel: 'manifest', href: '/manifest.webmanifest' }
@@ -77,6 +77,12 @@ module.exports = {
             autoprefixer,
             plugins: {
                 'postcss-custom-properties': false
+            },
+            preset: {
+                // Change the postcss-preset-env settings
+                autoprefixer: {
+                    grid: true
+                }
             }
         }
     },
