@@ -2,22 +2,10 @@
     "name": "marmt",
     "version": 2,
     "alias": "marmt.io",
-    "files": [
-        "api",
-        "assets",
-        "components",
-        "layouts",
-        "middleware",
-        "pages",
-        "plugins",
-        "static",
-        "store",
-        ".eslintrc.js",
-        ".gitignore",
-        ".gitattributes",
-        "nuxt.config.js",
-        "package-lock.json",
-        "package.json",
-        "README.md"
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@now/static-build"
+        }
     ]
 }
