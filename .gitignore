@@ -9,3 +9,4 @@ dist
 # Misc
 .vscode
 *.DS_Store
+nowcurls.txt

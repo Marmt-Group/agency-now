@@ -1,6 +1,7 @@
 import express from 'express'
 import validator from 'validator'
 import xssFilters from 'xss-filters'
+import helmet from 'helmet'
 
 const Mailjet = require('node-mailjet').connect(
     process.env.MAILJET_PUBLIC, //public key
@@ -21,20 +22,12 @@ const validateAndSanitize = (key, value) => {
     return rejectFunctions.hasOwnProperty(key) && !rejectFunctions[key](value) && xssFilters.inHTMLData(value)
 }
 
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+// add some security-related headers to the response
+app.use(helmet())
 
 app.use(express.json())
 
-app.get('/', function (req, res) {
-    res.status(405).json({ error: 'sorry!' })
-})
-
-app.post('/', function (req, res) {
+app.post('*', (req, res) => {
     const attributes = ['name', 'email', 'company', 'message']
     const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
     const someInvalid = sanitizedAttributes.some(r => !r)
@@ -55,7 +48,7 @@ app.post('/', function (req, res) {
         "Headers": { "Reply-To": req.body.email }
     }
 
-    const mailResponse = async() => {
+    const mailResponse = async () => {
         await sendEmail
             .request(emailData)
             .catch(function (error) {
@@ -63,7 +56,7 @@ app.post('/', function (req, res) {
                 console.error(error.ErrorMessage)
                 success = { message: error.ErrorMessage };
             })
-        
+
         if (success == 'sent') {
             return res.status(200).send({ message: 'Email sent.' })
         } else {
@@ -72,6 +65,10 @@ app.post('/', function (req, res) {
     }
 
     mailResponse()
+})
+
+app.all('*', (req, res) => {
+    res.status(405).send({ error: 'only POST requests are accepted' })
 })
 
 module.exports = {

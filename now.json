@@ -2,10 +2,35 @@
     "name": "marmt",
     "version": 2,
     "alias": "marmt.io",
+    "build": {
+        "env": {
+            "MAILJET_PRIVATE": "@mailjet_private",
+            "MAILJET_PUBLIC": "@mailjet_public",
+            "GMAP_KEY": "@gmapkey",
+            "GANALYTICS": "@ganalytics"
+        }
+    },
+    "routes": [
+        {
+            "src": "/favicon.ico",
+            "dest": "/favicon.ico"
+        },
+        {
+            "src": "/api/contact",
+            "dest": "api/contact/index.js",
+            "methods": [
+                "POST"
+            ]
+        }
+    ],
     "builds": [
         {
             "src": "package.json",
             "use": "@now/static-build"
+        },
+        {
+            "src": "api/contact/index.js",
+            "use": "@now/node"
         }
     ]
 }

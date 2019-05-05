@@ -294,7 +294,7 @@ export default {
             const callback = () => {
                 mountMap();
                 if (!Object.keys(this.$google.maps).length) {
-                    this.$sentry.captureException(new Error('Maps is not loading on marmt-now.'))
+                    console.log('Maps is not loading on marmt-now.')
                 }
                 window.removeEventListener('maps-module:loaded', callback)
             }
@@ -333,9 +333,7 @@ export default {
                 this.messageSent()
             })
             .catch((error) => {
-                console.log(error)
-                //send sentry.io error
-                this.$sentry.captureException(new Error('Mail is not sending at marmt-now'))
+                console.error('Mail is not sending.')
                 this.isLoading = false
                 this.isDanger = true
                 this.messageNotSubmitted()
