@@ -101,5 +101,9 @@ module.exports = {
             key: process.env.GMAP_KEY, // Google maps key
         }],
         '@nuxtjs/axios'
-    ]
+    ],
+    axios: {
+        proxyHeaders: false,
+        credentials: true
+    }
 }

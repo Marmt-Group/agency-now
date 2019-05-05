@@ -17,10 +17,7 @@
         },
         {
             "src": "/api/contact",
-            "dest": "api/contact/index.js",
-            "methods": [
-                "POST"
-            ]
+            "dest": "api/contact/index.js"
         }
     ],
     "builds": [

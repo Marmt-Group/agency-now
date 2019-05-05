@@ -1,7 +1,6 @@
 import express from 'express'
 import validator from 'validator'
 import xssFilters from 'xss-filters'
-import helmet from 'helmet'
 
 const Mailjet = require('node-mailjet').connect(
     process.env.MAILJET_PUBLIC, //public key
@@ -22,8 +21,12 @@ const validateAndSanitize = (key, value) => {
     return rejectFunctions.hasOwnProperty(key) && !rejectFunctions[key](value) && xssFilters.inHTMLData(value)
 }
 
-// add some security-related headers to the response
-app.use(helmet())
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.use(express.json())
 
@@ -71,7 +74,4 @@ app.all('*', (req, res) => {
     res.status(405).send({ error: 'only POST requests are accepted' })
 })
 
-module.exports = {
-    path: '/api/contact',
-    handler: app
-}
+export default app
