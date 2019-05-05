@@ -35,7 +35,6 @@ app.post('*', (req, res) => {
     const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
     const someInvalid = sanitizedAttributes.some(r => !r)
     const sendEmail = Mailjet.post('send');
-    let success = 'sent'
 
     if (someInvalid) {
         return res.status(422).json({ 'error': 'Ugh.. That looks unprocessable!' })
@@ -54,17 +53,14 @@ app.post('*', (req, res) => {
     const mailResponse = async () => {
         await sendEmail
             .request(emailData)
-            .catch(function (error) {
+            .then((result) => {
+                return res.status(200).send({ message: 'Email sent.' })
+            }) 
+            .catch((error) => {
                 // Render error message
-                console.error(error.ErrorMessage)
-                success = { message: error.ErrorMessage };
+                console.error(error)
+                return res.status(500).send(error)
             })
-
-        if (success == 'sent') {
-            return res.status(200).send({ message: 'Email sent.' })
-        } else {
-            return res.status(401).send(success)
-        }
     }
 
     mailResponse()
