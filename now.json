@@ -4,8 +4,7 @@
     "alias": "marmt.io",
     "build": {
         "env": {
-            "MAILJET_PRIVATE": "@mailjet_private",
-            "MAILJET_PUBLIC": "@mailjet_public",
+            "MAILGUN_KEY": "@mailgun_key",
             "GMAP_KEY": "@gmapkey",
             "GANALYTICS": "@ganalytics"
         }

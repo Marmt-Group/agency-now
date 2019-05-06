@@ -2,8 +2,8 @@ import express from 'express'
 import validator from 'validator'
 import xssFilters from 'xss-filters'
 
-const API_KEY = 'YOUR_API_KEY';
-const DOMAIN = 'YOUR_DOMAIN_NAME';
+const API_KEY = process.env.MAILGUN_KEY;
+const DOMAIN = 'marmt.io';
 const mailgun = require('mailgun-js')({ apiKey: API_KEY, domain: DOMAIN });
 
 const app = express()
@@ -40,13 +40,12 @@ app.post('*', (req, res) => {
 
     try {
         const emailData = {
-            'FromEmail': 'admin@marmt.io',
-            'FromName': req.body.name,
-            'Subject': 'New Marmot Inquiry from ' + req.body.company,
-            'Text-part': req.body.message,
-            'Html-part': '<p>' + req.body.message + '</p>',
-            'Recipients': [{ 'Email': 'davidjamesdavis.djd@gmail.com', 'Name': 'David' }],
-            "Headers": { "Reply-To": req.body.email }
+            from: 'admin@marmt.io',
+            subject: 'New Marmot Inquiry from ' + req.body.company,
+            text: req.body.message,
+            html: '<p>Message from: ' + req.body.name + '. ' + req.body.message + '</p>',
+            to: 'davidjamesdavis.djd@gmail.com',
+            'h:Reply-To': req.body.email 
         }
 
         const mailResponse = async () => {
@@ -55,11 +54,10 @@ app.post('*', (req, res) => {
                     if (error) {
                         throw (error);
                     }
-
-                    return res.status(200).send({ message: 'Email sent.' })
+                    console.log(body)
+                    return res.render('submitted', { email: req.body.email });
                 });
         }
-
         mailResponse()
 
     } catch (error) {
