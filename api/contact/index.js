@@ -2,10 +2,9 @@ import express from 'express'
 import validator from 'validator'
 import xssFilters from 'xss-filters'
 
-const Mailjet = require('node-mailjet').connect(
-    process.env.MAILJET_PUBLIC, //public key
-    process.env.MAILJET_PRIVATE //private key
-);
+const API_KEY = 'YOUR_API_KEY';
+const DOMAIN = 'YOUR_DOMAIN_NAME';
+const mailgun = require('mailgun-js')({ apiKey: API_KEY, domain: DOMAIN });
 
 const app = express()
 
@@ -34,33 +33,38 @@ app.post('*', (req, res) => {
     const attributes = ['name', 'email', 'company', 'message']
     const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
     const someInvalid = sanitizedAttributes.some(r => !r)
-    const sendEmail = Mailjet.post('send');
 
     if (someInvalid) {
         return res.status(422).json({ 'error': 'Ugh.. That looks unprocessable!' })
     }
 
-    const emailData = {
-        'FromEmail': 'admin@marmt.io',
-        'FromName': req.body.name,
-        'Subject': 'New Marmot Inquiry from ' + req.body.company,
-        'Text-part': req.body.message,
-        'Html-part': '<p>' + req.body.message + '</p>',
-        'Recipients': [{ 'Email': 'davidjamesdavis.djd@gmail.com', 'Name': 'David' }],
-        "Headers": { "Reply-To": req.body.email }
-    }
+    try {
+        const emailData = {
+            'FromEmail': 'admin@marmt.io',
+            'FromName': req.body.name,
+            'Subject': 'New Marmot Inquiry from ' + req.body.company,
+            'Text-part': req.body.message,
+            'Html-part': '<p>' + req.body.message + '</p>',
+            'Recipients': [{ 'Email': 'davidjamesdavis.djd@gmail.com', 'Name': 'David' }],
+            "Headers": { "Reply-To": req.body.email }
+        }
 
-    const mailResponse = async () => {
-        await sendEmail
-            .request(emailData)
-            .then((result) => {
-                return res.status(200).send({ message: 'Email sent.' })
-            }) 
-            .catch((error) => {
-                // Render error message
-                console.error(error)
-                return res.status(500).send(error)
-            })
+        const mailResponse = async () => {
+            await mailgun.messages()
+                .send(emailData, (error, body) => {
+                    if (error) {
+                        throw (error);
+                    }
+
+                    return res.status(200).send({ message: 'Email sent.' })
+                });
+        }
+
+        mailResponse()
+
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send(error)
     }
 
     mailResponse()

@@ -36,7 +36,6 @@
     "helmet": "^3.18.0",
     "jquery": "^3.4.1",
     "mailgun-js": "^0.22.0",
-    "node-mailjet": "^3.2.1",
     "nuxt": "^2.6.3",
     "nuxt-google-maps-module": "^1.6.0",
     "postcss-custom-properties": "^8.0.6",
