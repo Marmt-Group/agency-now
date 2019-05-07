@@ -333,7 +333,7 @@ export default {
                 this.messageSent()
             })
             .catch((error) => {
-                console.error('Mail is not sending.')
+                console.error('Mail is not sending.', error)
                 this.isLoading = false
                 this.isDanger = true
                 this.messageNotSubmitted()

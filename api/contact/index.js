@@ -62,10 +62,9 @@ app.post('*', (req, res) => {
 
     } catch (error) {
         console.error(error)
-        return res.status(500).send(error)
+        return res.render('error', { error: error });
     }
 
-    mailResponse()
 })
 
 app.all('*', (req, res) => {

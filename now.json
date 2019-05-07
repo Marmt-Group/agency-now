@@ -2,12 +2,10 @@
     "name": "marmt",
     "version": 2,
     "alias": "marmt.io",
-    "build": {
-        "env": {
-            "MAILGUN_KEY": "@mailgun_key",
-            "GMAP_KEY": "@gmapkey",
-            "GANALYTICS": "@ganalytics"
-        }
+    "env": {
+        "MAILGUN_KEY": "@mailgunkey",
+        "GMAP_KEY": "@gmapkey",
+        "GANALYTICS": "@ganalytics"
     },
     "routes": [
         {
