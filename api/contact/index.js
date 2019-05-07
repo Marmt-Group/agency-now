@@ -1,11 +1,10 @@
 import express from 'express'
 import validator from 'validator'
 import xssFilters from 'xss-filters'
+import Mailgun from 'mailgun-js'
 
 const API_KEY = process.env.MAILGUN_KEY;
 const DOMAIN = 'marmt.io';
-const mailgun = require('mailgun-js')({ apiKey: API_KEY, domain: DOMAIN });
-
 const app = express()
 
 const validateAndSanitize = (key, value) => {
@@ -39,6 +38,8 @@ app.post('*', (req, res) => {
     }
 
     try {
+        const mailgun = new Mailgun({ apiKey: API_KEY, domain: DOMAIN })
+
         const emailData = {
             from: 'admin@marmt.io',
             subject: 'New Marmot Inquiry from ' + req.body.company,
@@ -65,10 +66,6 @@ app.post('*', (req, res) => {
         return res.render('error', { error: error });
     }
 
-})
-
-app.all('*', (req, res) => {
-    res.status(405).send({ error: 'only POST requests are accepted' })
 })
 
 export default app
