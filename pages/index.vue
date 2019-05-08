@@ -190,7 +190,7 @@
             </div>
             <!-- Title -->
 
-            <div class="content-wrapper">
+            <div class="content-wrapper modern-team-wrapper">
                 <div class="modern-team single">
                     <!-- Team member -->
                     <div v-for="member in agency.team.members" :key="member.id" class="modern-team-item circle-mask zoom-effect">
