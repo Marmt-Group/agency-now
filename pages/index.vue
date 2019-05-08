@@ -310,7 +310,7 @@ const data = {
             }
         ],
     },
-    bio: "David is a dedicated engineer with Fortune 500 corporate experience and an agency background. He started Marmt because he's a really passionate, really hungry developer who think's Marmt can do things a little better than the competition. Far too often digital agencies die because they become technically irrelevant. Marmt is here to bring you quality solutions with software and strive to remain ahead of the curve.",
+    bio: "David is a dedicated engineer with Fortune 500 corporate experience and an agency background. He started Marmt because he's a passionate, hungry developer who think's Marmt can do things better than the competition. We strive to remain technology modern and efficient to bring you quality solutions to keep you ahead of the curve.",
     clients: {
         title: "They Trust Us",
         subtext: "Discover the meaning of code quality and hire our team. Let's work together."
