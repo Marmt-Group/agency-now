@@ -100,7 +100,10 @@ a {
     align-items: center;
 
     .modern-team-item {
-        width: 40%;
+        width: 100%;
+        @media screen and (min-width: $tablet-size) {
+            width: 40%;
+        }
         .item-img {
             border-radius: 10px;
             height: auto;
@@ -130,7 +133,10 @@ a {
         //letter-spacing: 1px;
         padding: 1.5rem;
         text-align: left;
-        width: 60%;
+        width: 100%;
+        @media screen and (min-width: $tablet-size) {
+            width: 60%;
+        }
         
     }
 
