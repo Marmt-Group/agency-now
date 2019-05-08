@@ -37,34 +37,30 @@ app.post('*', (req, res) => {
         return res.status(422).json({ 'error': 'Ugh.. That looks unprocessable!' })
     }
 
-    try {
-        const mailgun = new Mailgun({ apiKey: API_KEY, domain: DOMAIN })
+    const mailgun = new Mailgun({ apiKey: API_KEY, domain: DOMAIN })
 
-        const emailData = {
-            from: 'admin@marmt.io',
-            subject: 'New Marmot Inquiry from ' + req.body.company,
-            text: req.body.message,
-            html: '<p>Message from: ' + req.body.name + '. ' + req.body.message + '</p>',
-            to: 'davidjamesdavis.djd@gmail.com',
-            'h:Reply-To': req.body.email 
-        }
-
-        const mailResponse = async () => {
-            await mailgun.messages()
-                .send(emailData, (error, body) => {
-                    if (error) {
-                        throw (error);
-                    }
-                    console.log(body)
-                    return res.render('submitted', { email: req.body.email });
-                });
-        }
-        mailResponse()
-
-    } catch (error) {
-        console.error(error)
-        return res.render('error', { error: error });
+    const emailData = {
+        from: 'admin@marmt.io',
+        subject: 'New Marmt Inquiry from ' + req.body.company,
+        text: req.body.message,
+        html: '<p>Message from: ' + req.body.name + ': ' + req.body.message + '</p>',
+        to: 'davidjamesdavis.djd@gmail.com',
+        'h:Reply-To': req.body.email 
     }
+
+    const mailResponse = async () => {
+        await mailgun.messages()
+            .send(emailData, (error, body) => {
+                if (error) {
+                    res.status(500).send('Something broke!')
+                    console.log("got an error: ", error);
+                }
+                res.status(200).send('Email sent!')
+                console.log(body)
+                
+            });
+    }
+    mailResponse()
 
 })
 

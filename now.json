@@ -3,20 +3,14 @@
     "version": 2,
     "alias": "marmt.io",
     "env": {
-        "MAILGUN_KEY": "@mailgunkey",
-        "GMAP_KEY": "@gmapkey",
-        "GANALYTICS": "@ganalytics"
+        "MAILGUN_KEY": "@mailgunkey"
     },
-    "routes": [
-        {
-            "src": "/favicon.ico",
-            "dest": "/favicon.ico"
-        },
-        {
-            "src": "/api/contact",
-            "dest": "api/contact/index.js"
+    "build": {
+        "env": {
+            "GMAP_KEY": "@gmapkey",
+            "GANALYTICS": "@ganalytics"
         }
-    ],
+    },
     "builds": [
         {
             "src": "package.json",
@@ -25,6 +19,16 @@
         {
             "src": "api/contact/index.js",
             "use": "@now/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/favicon.ico",
+            "dest": "/favicon.ico"
+        },
+        {
+            "src": "/api/contact",
+            "dest": "api/contact/index.js"
         }
     ]
 }
