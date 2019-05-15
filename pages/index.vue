@@ -24,7 +24,7 @@
                             <h4>Full-stack development</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We're strive to be tech agnostic utilizing frameworks like React, Vue, and Angular to back-end with expertise in Node.js, Golang and experience with Python and PHP.</span>
+                            <span class="">We strive to be tech agnostic utilizing frameworks like React, Vue, and Angular to back-end with expertise in Node.js, Golang and experience with Python and PHP.</span>
                         </div>
                     </div>
                 </div>
