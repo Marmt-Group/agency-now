@@ -74,7 +74,7 @@
                         </nav>
                     </div> -->
                     <div class="copyright">
-                        <p>&copy;{{this.year}} Marmt Group, LLC.</p>
+                        <p>&copy;{{this.year}} Marmt Group, LLC. | Veteran Owned &amp; Operated.</p>
                     </div>
                 </div>
             </div>
