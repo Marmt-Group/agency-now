@@ -87,7 +87,7 @@
     const data = {
         hero: {
             title: "We're Marmt",
-            subtext: "Marmt (mar·mot) is a full-stack engineer led agency. We're a remote geographically dispersed team that provides leading edge enterprise level expertise."
+            subtext: "Marmt (mar·mot) is a remote geographically dispersed team of talented strategists, researchers, designers and developers."
         },
         navItems: [
             {link: 'About', url: '#about', id: 1},
