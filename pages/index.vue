@@ -318,7 +318,7 @@ const data = {
     },
     clients: {
         title: "They Trust Us",
-        subtext: "Discover the meaning of code quality and hire our team. Let's work together."
+        subtext: "We're lucky to have worked with some of the best companies in the world. But truth is, we love working with small to medium-sized businesses. Let's work together!"
     }
 }
 
