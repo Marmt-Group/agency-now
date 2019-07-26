@@ -126,11 +126,13 @@ a {
     .modern-team-bio {
         color: $primary-font-grey;
         font-family: $font-family;
-        font-size: 1.35rem;
+        font-size: 1.25rem;
         font-weight: 600;
         flex-shrink: 0;
         line-height: 1.5;
         //letter-spacing: 1px;
+        max-height: 382px;
+        overflow: auto;
         padding: 1.5rem;
         text-align: left;
         width: 100%;

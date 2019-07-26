@@ -87,7 +87,7 @@
     const data = {
         hero: {
             title: "We're Marmt",
-            subtext: "Marmt (mar·mot) is a remote geographically dispersed team of talented strategists, researchers, designers and developers."
+            subtext: "Marmt (mar·mot) is a remote geographically dispersed team of talented creative strategists, researchers, designers and developers."
         },
         navItems: [
             {link: 'About', url: '#about', id: 1},

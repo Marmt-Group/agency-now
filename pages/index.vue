@@ -49,10 +49,10 @@
                             <i class="im im-icon-Monitor-Analytics"></i>
                         </div>
                         <div class="card-title">
-                            <h4>Analytics</h4>
+                            <h4>Marketing &amp; Research</h4>
                         </div>
                         <div class="card-feature-description">
-                            <span class="">We provide turn-key solutions like site analytics and other "white hat" strategies. Ask us for more details. <!--a href="#work-with-us" @click="workWithUs">Interested in developing with us?</a--></span>
+                            <span class="">We provide turn-key solutions like usability research, analytics, SEM and other "white hat" strategies. Ask us for more details. <!--a href="#work-with-us" @click="workWithUs">Interested in developing with us?</a--></span>
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                             <div class="process-info">
                                 <div class="details">
                                     <div class="motto">Design</div>
-                                    <p class="description">We begin our development architecture with a formal engineering design documentation phase.</p>
+                                    <p class="description">We begin our process with research on your perfect customer. We then formulate a design strategy, verified with useabilty testing. After that we begin formal designs.</p>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +151,7 @@
                             <div class="process-info">
                                 <div class="details">
                                     <div class="motto">Develop</div>
-                                    <p class="description">We develop with best in class tools, and we develop with these things in mind: user experience, scalability, readability, and maintainability.</p>
+                                    <p class="description">We develop first with formal engineering design docs in collaboration with our team of developers. Of course we develop with best in class tools, and we develop with these things in mind: user experience, scalability, readability, and maintainability.</p>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
                             <div class="process-info">
                                 <div class="details">
                                     <div class="motto">Iterate</div>
-                                    <p class="description">You know, the back and forth between the client and us to achieve a desirable end.</p>
+                                    <p class="description">You know, the back and forth between the client and us to achieve a desirable end before we ship the product.</p>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +211,10 @@
                             <span class="member-position">{{member.title}}</span>
                         </div> -->
                     </div>
-                    <div class="modern-team-bio">{{agency.bio}}</div>
+                    <div class="modern-team-bio">
+                        <p>Marmt exists because there are many digital agencies dying in the modern age because they fail to evolve. We do things a bit different, but actually it’s quite simple—what the customer wants, and what the customer needs, they deserve to get. Many agencies die technologically because developers fail to evolve themselves, and it’s easier to punch out the same technology that you know well and do it fast, but this serves the developer not the client.  Many designers don’t thrive because they’re not given freedom to be creative. They should work where they can be creative like a museum, or library. That office open floor plan- total distraction and not inspirational at all.</p>
+                        <p>On that note we’re a remote first company, why? Because remote is the future. Millennials want this to happen, and as millennials replace Gen-Xers and Baby Boomers as heads of companies this will become a reality. Don’t believe me, well I made it a point to ask almost every designer and developer I worked with at Apple and Google if they prefer remote vs. on-site, and not a single person said on-site. People work best where they are comfortable and secondly life happens; being stuck in an office for 8 hours a day just doesn’t make sense. Lastly, to conclude my long tangent, gentrification and rising home prices are a big problem in the San Francisco Bay Area and the solution is remote work, where talent is spread out all across the globe.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -310,7 +313,6 @@ const data = {
             }
         ],
     },
-    bio: "David is a dedicated engineer with Fortune 500 corporate experience and an agency background. He started Marmt because he's a passionate, hungry developer who think's Marmt can do things better than the competition. We strive to remain technology modern and efficient to bring you quality solutions to keep you ahead of the curve.",
     clients: {
         title: "They Trust Us",
         subtext: "Discover the meaning of code quality and hire our team. Let's work together."
