@@ -18,6 +18,20 @@
                 <div class="column">
                     <div class="feature-card card-md hover-inset has-text-centered">
                         <div class="card-icon">
+                            <i class="im im-icon-Monitor-Analytics"></i>
+                        </div>
+                        <div class="card-title">
+                            <h4>Marketing &amp; Research</h4>
+                        </div>
+                        <div class="card-feature-description">
+                            <span class="">We provide turn-key solutions like usability research, analytics, SEM and other "white hat" strategies. Ask us for more details. <!--a href="#work-with-us" @click="workWithUs">Interested in developing with us?</a--></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="column">
+                    <div class="feature-card card-md hover-inset has-text-centered">
+                        <div class="card-icon">
                             <i class="im im-icon-Two-Windows"></i>
                         </div>
                         <div class="card-title">
@@ -39,20 +53,6 @@
                         </div>
                         <div class="card-feature-description">
                             <span class="">We're about building mobile applications in Flutter or React Native.</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card -->
-                <div class="column">
-                    <div class="feature-card card-md hover-inset has-text-centered">
-                        <div class="card-icon">
-                            <i class="im im-icon-Monitor-Analytics"></i>
-                        </div>
-                        <div class="card-title">
-                            <h4>Marketing &amp; Research</h4>
-                        </div>
-                        <div class="card-feature-description">
-                            <span class="">We provide turn-key solutions like usability research, analytics, SEM and other "white hat" strategies. Ask us for more details. <!--a href="#work-with-us" @click="workWithUs">Interested in developing with us?</a--></span>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
 
             <!-- Process steps -->
             <div class="content-wrapper">
-                <div class="columns is-vcentered">
+                <div class="columns">
                     <!-- Process step -->
                     <div class="column is-4">
                         <div class="process-block">
@@ -168,7 +168,7 @@
                             <div class="process-info">
                                 <div class="details">
                                     <div class="motto">Iterate</div>
-                                    <p class="description">You know, the back and forth between the client and us to achieve a desirable end before we ship the product.</p>
+                                    <p class="description">You know, the back and forth between the client and us to achieve a desirable end. We're not satisifed until you are absoultely happy with our product.</p>
                                 </div>
                             </div>
                         </div>
@@ -185,7 +185,7 @@
         <div class="container">
             <!-- Title -->
             <div class="centered-title">
-                <h2>{{agency.team.title}}</h2>
+                <h2>A <span style="text-decoration: line-through;">Word</span> Tangent from the Founder</h2>
                 <div class="title-divider"></div>
             </div>
             <!-- Title -->
@@ -212,8 +212,12 @@
                         </div> -->
                     </div>
                     <div class="modern-team-bio">
-                        <p>Marmt exists because there are many digital agencies dying in the modern age because they fail to evolve. We do things a bit different, but actually it’s quite simple—what the customer wants, and what the customer needs, they deserve to get. Many agencies die technologically because developers fail to evolve themselves, and it’s easier to punch out the same technology that you know well and do it fast, but this serves the developer not the client.  Many designers don’t thrive because they’re not given freedom to be creative. They should work where they can be creative like a museum, or library. That office open floor plan- total distraction and not inspirational at all.</p>
-                        <p>On that note we’re a remote first company, why? Because remote is the future. Millennials want this to happen, and as millennials replace Gen-Xers and Baby Boomers as heads of companies this will become a reality. Don’t believe me, well I made it a point to ask almost every designer and developer I worked with at Apple and Google if they prefer remote vs. on-site, and not a single person said on-site. People work best where they are comfortable and secondly life happens; being stuck in an office for 8 hours a day just doesn’t make sense. Lastly, to conclude my long tangent, gentrification and rising home prices are a big problem in the San Francisco Bay Area and the solution is remote work, where talent is spread out all across the globe.</p>
+                        <div class="content">
+                        <p>Marmt exists because there are many digital agencies dying in the modern age that fail to evolve. We do things a bit different, but actually it’s quite simple—what the customer wants, and what the customer needs, they deserve to get.</p>
+                        <p>Many agencies die technologically because developers fail to evolve themselves, and it’s easier to punch out the same technology that you know well and do it fast, but this serves the developer not the client.  Many designers don’t thrive because they’re not given freedom to be creative. They should work where they can be creative like a museum, or library. That office open floor plan- total distraction and not inspirational at all.</p>
+                        <p>On that note we’re a remote first company, why? Because remote is the future. Millennials want this to happen, and as millennials replace Gen-Xers and Baby Boomers as heads of companies this will become a reality. Don’t believe me, well I made it a point to ask almost every designer and developer I worked with at Apple and Google if they prefer remote vs. on-site, and not a single person said on-site. People work best where they are comfortable and secondly life happens; being stuck in an office for 8 hours a day just doesn’t make sense.</p>
+                        <p>Lastly, to conclude my long tangent, gentrification and rising home prices are a big problem in the San Francisco Bay Area and the solution is remote work, where talent is spread out all across the globe.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -298,10 +302,9 @@ import HeroNavbar from '~/components/nav/HeroNavbar.vue'
 const data = {
     process: {
         title: "Our Process",
-        subtext: "Before development, there's thinking. Our process is sharp and let us craft the best quality."
+        subtext: "Before development, there's thinking. Our process is sharp and lets us craft the best quality."
     },
     team: {
-        title: "Meet the Founder",
         subtext: "David is a dedicated engineer with Fortune 500 Silicon Valley corporate experience and an agency background.",
         members: [
             {
