@@ -319,7 +319,7 @@ const data = {
     },
     clients: {
         title: "They Trust Us",
-        subtext: "We're lucky to have worked with some of the best companies in the world, however the marjority of our clients are small to medium sized businesses, our prices are competitive- and lower than many parts of the bay area. Let's work together!"
+        subtext: "We're lucky to have worked with some of the best companies in the world, however the majority of our clients are small to medium sized businesses; our prices are competitive—and lower than most parts of the bay area. Let's work together!"
     }
 }
 
