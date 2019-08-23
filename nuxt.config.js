@@ -14,11 +14,11 @@ module.exports = {
     ** Headers of the page
     */
     head: {
-        title: 'Marmt | A Full stack engineer ran agency.',
+        title: 'Marmt | A remote first creative technology company.',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: 'Marmt is a full stack engineer ran agency by two experienced silicon valley engineers with agency backgrounds.' }        ],
+            { hid: 'description', name: 'description', content: 'Marmt (mar·mot) is a remote geographically dispersed team of talented creative strategists, researchers, designers and developers.' }        ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
             { rel: 'manifest', href: '/manifest.webmanifest' }

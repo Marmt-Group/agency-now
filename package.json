@@ -12,7 +12,7 @@
     "now-build": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "deploy": "npm install -g now@latest && now --target production"
+    "deploy": "npm install -g now@latest && now --prod"
   },
   "repository": {
     "type": "git",

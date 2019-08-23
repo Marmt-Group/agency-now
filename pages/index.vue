@@ -214,9 +214,10 @@
                     <div class="modern-team-bio">
                         <div class="content">
                         <p>Marmt exists because there are many digital agencies dying in the modern age that fail to evolve. We do things a bit different, but actually it’s quite simple—what the customer wants, and what the customer needs, they deserve to get.</p>
-                        <p>Many agencies die technologically because developers fail to evolve themselves, and it’s easier to punch out the same technology that you know well and do it fast, but this serves the developer not the client.  Many designers don’t thrive because they’re not given freedom to be creative. They should work where they can be creative like a museum, or library. That office open floor plan- total distraction and not inspirational at all.</p>
-                        <p>On that note we’re a remote first company, why? Because remote is the future. Millennials want this to happen, and as millennials replace Gen-Xers and Baby Boomers as heads of companies this will become a reality. Don’t believe me, well I made it a point to ask almost every designer and developer I worked with at Apple and Google if they prefer remote vs. on-site, and not a single person said on-site. People work best where they are comfortable and secondly life happens; being stuck in an office for 8 hours a day just doesn’t make sense.</p>
-                        <p>Lastly, to conclude my long tangent, gentrification and rising home prices are a big problem in the San Francisco Bay Area and the solution is remote work, where talent is spread out all across the globe.</p>
+                        <p>Many agencies die technologically because developers fail to evolve themselves, and it’s easier to punch out the same technology that you know well and do it fast, but this serves the developer not the client.</p>
+                        <p>Many designers don’t thrive because they’re not given freedom to be creative. They should work where they can be creative, maybe that's a museum, or library. That office open floor plan⁠—total distraction and not inspirational at all.</p>
+                        <p>On that note we’re a remote first company, why? Because remote is the future. Millennials want this to happen, and as millennials replace Gen-Xers and Baby Boomers as heads of companies this will become a reality. Don’t believe me, well I made it a point to ask almost every designer and developer I worked with at Apple and Google if they prefer remote vs. on-site, and the overwhelming majority said on-site. People work best where they are comfortable and secondly life happens; being stuck in an office for 8 hours a day just doesn’t make sense.</p>
+                        <p>Lastly, to conclude my long tangent, gentrification and rising home prices are a problem in the San Francisco Bay Area and the solution is remote work, where talent is spread out all across the globe.</p>
                         </div>
                     </div>
                 </div>
@@ -318,7 +319,7 @@ const data = {
     },
     clients: {
         title: "They Trust Us",
-        subtext: "We're lucky to have worked with some of the best companies in the world. But truth is, we love working with small to medium-sized businesses. Let's work together!"
+        subtext: "We're lucky to have worked with some of the best companies in the world, however the marjority of our clients are small to medium sized businesses, our prices are competitive- and lower than many parts of the bay area. Let's work together!"
     }
 }
 
