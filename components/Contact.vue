@@ -8,7 +8,7 @@
                 <div class="contact-form-wrapper">
                     <div>
                         <h2 class="form-title has-text-centered">Say Hello !</h2>
-                        <p>Fill out the form below, or schedule your <a href="https://calendly.com/marmt" target="_blank">free consultation call now</a>!</p>
+                        <p class="has-text-centered">Fill out the form below, or schedule your <a href="https://calendly.com/marmt" target="_blank">free consultation call now</a>!</p>
                         <form id="contact-form" class="pl-20 pr-20" @submit.prevent="sendMail" @keyup.enter="sendMail">
                             <div class="columns">
                                 <div class="column is-8 is-offset-2">

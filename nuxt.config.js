@@ -40,7 +40,8 @@ module.exports = {
         '~/assets/scss/main.scss'
     ],
     plugins: [
-        { src: '~/plugins/agency.js', ssr: false }
+        { src: '~/plugins/agency.js', ssr: false },
+        { src: '~/plugins/vue-beautiful-chat', ssr: false }
     ],
     /*
     ** Build configuration
@@ -84,7 +85,8 @@ module.exports = {
                     grid: true
                 }
             }
-        }
+        },
+        transpile: ['vue-beautiful-chat']
     },
     modules: [
         ['@nuxtjs/google-analytics', {
