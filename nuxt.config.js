@@ -40,8 +40,8 @@ module.exports = {
         '~/assets/scss/main.scss'
     ],
     plugins: [
-        { src: '~/plugins/agency.js', ssr: false },
-        { src: '~/plugins/vue-beautiful-chat', ssr: false }
+        { src: '~/plugins/agency', mode: 'client' },
+        { src: '~/plugins/socket.io.js', mode: 'client' },
     ],
     /*
     ** Build configuration
@@ -74,6 +74,15 @@ module.exports = {
                 })
             }
         },
+        extend(config, ctx) {
+            config.module.rules.push({
+                test: /\.(ogg|mp3|wav|mpe?g)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]',
+                },
+            })
+        },
         postcss: {
             autoprefixer,
             plugins: {
@@ -85,8 +94,7 @@ module.exports = {
                     grid: true
                 }
             }
-        },
-        transpile: ['vue-beautiful-chat']
+        }
     },
     modules: [
         ['@nuxtjs/google-analytics', {

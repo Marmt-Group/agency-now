@@ -11,4 +11,4 @@ dist
 *.DS_Store
 nowcurls.txt
 nowdns.txt
-.env
+.env*

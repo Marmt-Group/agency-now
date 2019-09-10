@@ -288,7 +288,6 @@
     </div>
     <!-- Contact -->
     <Contact/>
-    <ChatBot/>
     <!-- /Clients grid -->
     <DarkFooter/>
   </div>
@@ -299,7 +298,6 @@ import AppLogo from '~/components/AppLogo.vue'
 import Contact from '~/components/Contact.vue'
 import DarkFooter from '~/components/footer/DarkFooter.vue'
 import HeroNavbar from '~/components/nav/HeroNavbar.vue'
-import ChatBot from '~/components/chatbot/ChatBot.vue'
 
 const data = {
     process: {
@@ -336,7 +334,6 @@ export default {
         Contact,
         DarkFooter,
         HeroNavbar,
-        ChatBot,
     },
     mounted() {
         // mount parallax functionality

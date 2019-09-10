@@ -1,131 +1,218 @@
 <template>
   <div>
-    <beautiful-chat
-      :participants="participants"
-      :titleImageUrl="titleImageUrl"
-      :onMessageWasSent="onMessageWasSent"
-      :messageList="messageList"
-      :newMessagesCount="newMessagesCount"
-      :isOpen="isChatOpen"
-      :close="closeChat"
-      :open="openChat"
-      :showEmoji="true"
-      :showFile="true"
-      :showTypingIndicator="showTypingIndicator"
-      :colors="colors"
-      :alwaysScrollToBottom="alwaysScrollToBottom"
-      :messageStyling="messageStyling"
-      @onType="handleOnType" />
-  </div>
+    <div class="open-chat" :class="(isOpen ? 'hide' : 'show')" @click="toggleChatOpen">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path :fill="iconColorProp" d="M899.3 171.4l-1.7 294.8s-4.9 159.7-176.2 159.7H481L373.9 736.3l176.2 1.6 242.1 250.3 8.3-256.9s189.4 13.2 189.4-154.8V327.8s8.2-100.3-90.6-156.4zM690.1 584.8c87.3 0 158.1-70.8 158.1-158.1V169.8c0-87.3-70.8-158.1-158.1-158.1h-522C80.8 11.7 10 82.5 10 169.8v256.9c0 87.3 70.8 158.1 158.1 158.1h13.3l1.6 233.9 261.2-233.9h245.9z"/></svg>
+    </div>
+    <div class="chat-container" :class="(isOpen ? 'show' : 'hide')">
+      <div class="chat-window">
+        <div class="close-chat" @click="toggleChatOpen" :style="{background: iconColorProp}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><g fill="none" stroke="#ffffff" stroke-width="10" stroke-miterlimit="10" stroke-linecap="round"><path d="M10 10l45 45M10 55l45-45"/></g></svg>
+        </div>
+        <div ref="chatArea" class="chat-area" :style="{background: messageBackgroundColorProp}">
+          <p v-for="message in messageListProp" :key="message.body" class="message" :style="[message.author === 'you' ? {background: messageOutColorProp} : {background: messageInColorProp}]" :class="{'message-out': message.author === 'you', 'message-in': message.author !== 'you' }">
+            {{ message.body }}
+          </p>
+        </div>
+        <div class="chat-input">
+          <form @submit.prevent="handleOutboundMessage()" class="chat-form">
+            <input v-model="youMessage" type="text" placeholder="Type your message" autofocus>
+            <button class="submit" type="submit"><v-icon name="send" base-class="icon-send-message" :style="{color: iconColorProp, width: '30px'}"></v-icon></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>  
 </template>
 
 <script>
-import CloseIcon from 'vue-beautiful-chat/src/assets/close-icon.png'
-import OpenIcon from 'vue-beautiful-chat/src/assets/logo-no-bg.svg'
-import FileIcon from 'vue-beautiful-chat/src/assets/file.svg'
-import CloseIconSvg from 'vue-beautiful-chat/src/assets/close.svg'
-
 export default {
-    data() {
-        return {    
-            icons:{
-            open:{
-                img: OpenIcon,
-                name: 'default',
-            },
-            close:{
-                img: CloseIcon,
-                name: 'default',
-            },
-            file:{
-                img: FileIcon,
-                name: 'default',
-            },
-            closeSvg:{
-                img: CloseIconSvg,
-                name: 'default',
-            },
-            },
-            participants: [
-            {
-                id: 'user1',
-                name: 'Matteo',
-                imageUrl: 'https://avatars3.githubusercontent.com/u/1915989?s=230&v=4'
-            },
-            {
-                id: 'user2',
-                name: 'Support',
-                imageUrl: 'https://avatars3.githubusercontent.com/u/37018832?s=200&v=4'
-            }
-            ], // the list of all the participant of the conversation. `name` is the user name, `id` is used to establish the author of a message, `imageUrl` is supposed to be the user avatar.
-            titleImageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
-            messageList: [
-                { type: 'text', author: `me`, data: { text: `Say yes!` } },
-                { type: 'text', author: `user1`, data: { text: `No.` } }
-            ], // the list of the messages to show, can be paginated and adjusted dynamically
-            newMessagesCount: 0,
-            isChatOpen: false, // to determine whether the chat window should be open or closed
-            showTypingIndicator: '', // when set to a value matching the participant.id it shows the typing indicator for the specific user
-            colors: {
-            header: {
-                bg: '#4e8cff',
-                text: '#ffffff'
-            },
-            launcher: {
-                bg: '#4e8cff'
-            },
-            messageList: {
-                bg: '#ffffff'
-            },
-            sentMessage: {
-                bg: '#4e8cff',
-                text: '#ffffff'
-            },
-            receivedMessage: {
-                bg: '#eaeaea',
-                text: '#222222'
-            },
-            userInput: {
-                bg: '#f4f7f9',
-                text: '#565867'
-            }
-            }, // specifies the color scheme for the component
-            alwaysScrollToBottom: false, // when set to true always scrolls the chat to the bottom when new events are in (new message, user starts typing...)
-            messageStyling: true // enables *bold* /emph/ _underline_ and such (more info at github.com/mattezza/msgdown)
-        }
+  name: 'Chat',
+  inheritAttrs: false,
+  props: {
+    iconColorProp: {
+      type: String,
+      default: '#e6e6e6'
     },
-    methods: {
-        sendMessage (text) {
-            if (text.length > 0) {
-            this.newMessagesCount = this.isChatOpen ? this.newMessagesCount : this.newMessagesCount + 1
-            this.onMessageWasSent({ author: 'support', type: 'text', data: { text } })
-            }
-        },
-        onMessageWasSent (message) {
-            // called when the user sends a message
-            this.messageList = [ ...this.messageList, message ]
-        },
-        openChat () {
-            // called when the user clicks on the fab button to open the chat
-            this.isChatOpen = true
-            this.newMessagesCount = 0
-        },
-        closeChat () {
-            // called when the user clicks on the botton to close the chat
-            this.isChatOpen = false
-        },
-        handleScrollToTop () {
-            // called when the user scrolls message list to top
-            // leverage pagination for loading another page of messages
-        },
-        handleOnType () {
-            console.log('Emit typing event')
-        },
-        editMessage(message){
-            const m = this.messageList.find(m=>m.id === message.id);
-            m.isEdited = true;
-            m.data.text = message.data.text;
-        }
+    messageBackgroundColorProp: {
+      type: String,
+      default: '#ffffff'
+    },
+    messageOutColorProp: {
+      type: String,
+      default: '#3d7e9a'
+    },
+    messageInColorProp: {
+      type: String,
+      default: '#f1f0f0'
+    },
+    messageListProp: Array,
+    initOpenProp: Boolean
+  },
+
+  data: () => {
+    return {
+      youMessage: '',
+      isOpen: false
     }
+  },
+
+  methods: {
+    handleOutboundMessage() {
+      if (!this.youMessage) {
+        return
+      }
+      this.$emit('onMessageWasSent', { body: this.youMessage, author: 'you' })
+      this.youMessage = ''
+      this.$nextTick(() => {
+        this.messageScroll()
+      })
+    },
+    toggleChatOpen() {
+      console.log('clicked')
+      this.isOpen = !this.isOpen
+      this.$emit('onToggleOpen', this.isOpen)
+    },
+    messageScroll() {
+      let messageDisplay = this.$refs.chatArea
+      messageDisplay.scrollTop = messageDisplay.scrollHeight
+    }
+  },
+  mounted() {
+    this.isOpen = this.initOpenProp || false
+    if (this.messageListProp) {
+      this.messageScroll()
+    }
+  }
 }
 </script>
+
+<style scoped lang="css">
+  * {
+    box-sizing: border-box;
+  }
+  .headline {
+    text-align: center;
+    font-weight: 100;
+    color: white;
+  }
+  .chat-container {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    max-width: 350px;
+    width: 100%;
+    z-index: 10000;
+    transform: scale(0);
+    transform-origin: right bottom;
+  }
+  .chat-container.show {
+    animation: scaleIn .15s ease-in-out 0s 1 normal forwards;
+  }
+  .chat-container.hide {
+    display: none;
+  }
+  .chat-window {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  .chat-area {
+    border-radius: 3px 3px 0 0;
+    height: 300px;
+    padding: 1em 1em 0;
+    position: relative;
+    overflow: auto;
+    width: 100%;
+  }
+  .message {
+    width: 45%;
+    border-radius: 10px;
+    padding: .5em;
+    font-size: .8em;
+  }
+  .message-out {
+    color: #ffffff;
+    margin-left: 50%;
+  }
+  .message-in {
+    background: #f1f0f0;
+    color: black;
+  }
+  .chat-inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+  .chat-input input {
+    border: none;
+    font-size: .8em;
+    outline: none;
+    padding: 1.5em;
+    width: 90%;
+  }
+  .chat-form {
+    background: #ffffff;
+    border-top: 1px solid #e9e9e9;
+    border-radius: 0 0 3px 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+  }
+  .submit {
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  .submit:focus {
+    outline: none;
+  }
+  .submit-icon {
+    width: 20px;
+  }
+  .close-chat {
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    width: 35px;
+    border-radius: 50%;
+    height: 35px;
+    background: #f7f7f7;
+    cursor: pointer;
+    transform: scale(0);
+  }
+  .chat-container.show .close-chat {
+    animation: scaleIn .15s ease-in-out .3s 1 normal forwards;
+  }
+  .close-chat svg {
+    position: relative;
+    left: 6px;
+    top: 6px;
+    width: 20px;
+  }
+  .open-chat {
+    position: fixed;
+    width: 70px;
+    right: 50px;
+    bottom: 25px;
+    cursor: pointer;
+    z-index: 900;
+    transform: scale(0);
+  }
+  .open-chat.hide {
+    display: none;
+  }
+  .open-chat.show {
+    animation: scaleIn .15s ease-in-out .15s 1 normal forwards;
+  }
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>

@@ -8,7 +8,10 @@
     "build": {
         "env": {
             "GMAP_KEY": "@gmapkey",
-            "GANALYTICS": "@ganalytics"
+            "GANALYTICS": "@ganalytics",
+            "SOCKET_URL": "@socket-url",
+            "TWILIO_ACCOUNT_SID": "@twilio-account-sid",
+            "TWILIO_AUTH_TOKEN": "@twilio-auth-token"
         }
     },
     "builds": [
