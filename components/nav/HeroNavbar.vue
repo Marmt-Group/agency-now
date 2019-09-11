@@ -66,7 +66,10 @@
         <div class="container has-text-centered">
             <div class="columns">
                 <div class="column is-8 has-text-centered is-header-caption">
-                    <h1 class="title main-title subpage-title text-bold is-2">
+                    <h1 v-if="guest" class="title main-title subpage-title text-bold is-2">
+                        Welcome to Marmt {{guest}}!
+                    </h1>
+                    <h1 v-else class="title main-title subpage-title text-bold is-2">
                         {{nav.hero.title}}
                     </h1>
                     <h2 class="subtitle is-4 light-text pt-20">
@@ -99,6 +102,10 @@
     }
 
     export default {
+        props: [
+            'guest',
+            'company'
+        ],
         data() {
             return {
                 nav: data

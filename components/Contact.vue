@@ -7,7 +7,8 @@
             <div class="column is-6">
                 <div class="contact-form-wrapper">
                     <div>
-                        <h2 class="form-title has-text-centered">Say Hello !</h2>
+                        <h2 v-if="name" class="form-title has-text-centered">Feel free to say {{name}}!</h2>
+                        <h2 v-else class="form-title has-text-centered">Say Hello!</h2>
                         <p class="has-text-centered">Fill out the form below, or schedule your <a href="https://calendly.com/marmt" target="_blank">free consultation call now</a>!</p>
                         <form id="contact-form" class="pl-20 pr-20" @submit.prevent="sendMail" @keyup.enter="sendMail">
                             <div class="columns">
@@ -82,7 +83,11 @@
 
 <script>
 export default {
-
+    props: [
+        'companyProp',
+        'guestProp',
+        'contactProp'
+    ],
     data() {
         return {
             name: '',
@@ -95,6 +100,11 @@ export default {
         }
     },
     mounted() {
+
+        this.name = this.guestProp ? this.guestProp : ''
+        this.email = this.contactProp ? this.contactProp : ''
+        this.company = this.companyProp ? this.companyProp : ''
+
         const mountMap = () => {
             const mapDiv = this.$el.querySelector('.half-map')
             const dublin = {lat: 37.7098245, lng: -121.9418987}

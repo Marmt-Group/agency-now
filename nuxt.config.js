@@ -1,9 +1,15 @@
 import autoprefixer from 'autoprefixer'
 import helmet from 'helmet'
+import dotenv from 'dotenv'
 
 const isProd = process.env.NODE_ENV === 'production'
+let config
 
-module.exports = {
+if (!isProd) {
+    config = dotenv.config({ path: './.env' })
+}
+
+export default {
     serverMiddleware: [
         helmet({
             referrerPolicy: { policy: 'strict-origin-when-cross-origin' }
@@ -40,8 +46,7 @@ module.exports = {
         '~/assets/scss/main.scss'
     ],
     plugins: [
-        { src: '~/plugins/agency', mode: 'client' },
-        { src: '~/plugins/socket.io.js', mode: 'client' },
+        { src: '~/plugins/agency', mode: 'client' }
     ],
     /*
     ** Build configuration
@@ -108,7 +113,7 @@ module.exports = {
             ]
         }],
         ['nuxt-google-maps-module', {
-            key: process.env.GMAP_KEY, // Google maps key
+            key: isProd ? process.env.GMAP_KEY : config.GMAP_KEY, // Google maps key
         }],
         '@nuxtjs/axios'
     ],
