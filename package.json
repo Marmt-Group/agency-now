@@ -37,7 +37,7 @@
     "helmet": "^3.19.0",
     "jquery": "^3.4.1",
     "mailgun-js": "^0.22.0",
-    "nuxt": "^2.8.1",
+    "nuxt": "^2.10.1",
     "nuxt-google-maps-module": "^1.6.0",
     "postcss-custom-properties": "^8.0.11",
     "scrollreveal": "^3.4.0",
