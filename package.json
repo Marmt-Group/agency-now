@@ -40,7 +40,7 @@
     "nuxt": "^2.8.1",
     "nuxt-google-maps-module": "^1.6.0",
     "postcss-custom-properties": "^9.0.2",
-    "scrollreveal": "^3.4.0",
+    "scrollreveal": "^4.0.5",
     "socks": "^2.2.1",
     "validator": "^11.1.0",
     "xss-filters": "^1.2.7"
