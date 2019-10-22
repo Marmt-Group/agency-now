@@ -39,7 +39,7 @@
     "mailgun-js": "^0.22.0",
     "nuxt": "^2.8.1",
     "nuxt-google-maps-module": "^1.6.0",
-    "postcss-custom-properties": "^8.0.11",
+    "postcss-custom-properties": "^9.0.2",
     "scrollreveal": "^3.4.0",
     "socks": "^2.2.1",
     "validator": "^11.1.0",
