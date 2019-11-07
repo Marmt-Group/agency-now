@@ -41,7 +41,7 @@
     "nuxt-google-maps-module": "^1.6.0",
     "postcss-custom-properties": "^9.0.2",
     "scrollreveal": "^4.0.5",
-    "socks": "^2.2.1",
+    "socks": "^2.3.3",
     "validator": "^11.1.0",
     "xss-filters": "^1.2.7"
   },
