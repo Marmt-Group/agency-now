@@ -46,7 +46,7 @@
     "xss-filters": "^1.2.7"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.5",
+    "autoprefixer": "^9.7.2",
     "babel-eslint": "^9.0.0",
     "dotenv": "^8.2.0",
     "eslint": "^4.19.1",
