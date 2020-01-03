@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/Marmt-Group/marmt-now#readme",
   "dependencies": {
-    "@nuxtjs/axios": "^5.7.1",
+    "@nuxtjs/axios": "^5.9.2",
     "@nuxtjs/google-analytics": "^2.0.2",
     "ajv": "^6.10.2",
     "basic-vue-chat": "^0.3.5",
