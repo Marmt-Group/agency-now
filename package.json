@@ -42,7 +42,7 @@
     "postcss-custom-properties": "^9.0.2",
     "scrollreveal": "^4.0.5",
     "socks": "^2.2.1",
-    "validator": "^11.1.0",
+    "validator": "^12.2.0",
     "xss-filters": "^1.2.7"
   },
   "devDependencies": {
